@@ -1,5 +1,7 @@
 /*
-Code based on Tom Igoe's Serial Graphing Sketch
+ Code based on Tom Igoe's Serial Graphing Sketch
+ >> http://wiki.processing.org/w/Tom_Igoe_Interview
+ 
  Reads 4 analog inputs and visualizes them by drawing a 2x2 grid,
  using grayscale shading of each square to represent sensor value.
  >> http://www.kobakant.at/DIY/?cat=347
@@ -53,4 +55,5 @@ void serialEvent (Serial myPort) {
     }
   }
 }
+
 
