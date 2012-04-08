@@ -10,7 +10,7 @@ int ledGNDsize = sizeof(ledGND);
 int ledPOSsize = sizeof(ledPOS);
 */
 
-int led[]={0,1,2,3};
+int led[]={0,1,2};
 int ledSize = sizeof(led);
 int count=0;
 
@@ -27,15 +27,15 @@ for (int z=0;z<ledSize;z++) pinMode(led[z],OUTPUT);
 
 void loop(){
 
-for (int x=0;x<254;x++){
-  spwmSIN(x,led[count],30);
+for (int x=1;x<254;x++){
+  spwmSIN(x,led[count],5);
 }
 for (int x=254;x>1;x--){
-  spwmSIN(x,led[count],30);
+  spwmSIN(x,led[count],5);
 }
 
 count++;
-  if (count>4){
+  if (count > 2){
 count=0;
 }
 
@@ -45,14 +45,14 @@ count=0;
 void spwmSIN(int freq,int spin,int sp){
   //on
   
-float brightness = (1 + sin(freq * count * PI + freq)) * 0.5:
+//float brightness = (1 + sin(freq * count * PI + freq)) * 0.5:
   
-digitalWrite(pin,HIGH);
+digitalWrite(spin,HIGH);
 delayMicroseconds(sp*freq);
 
 // off
 digitalWrite(spin,LOW);
-delayMicroseconds(sp*(254-freq));
+delayMicroseconds(sp*(255-freq));
 } //spwm
 
 

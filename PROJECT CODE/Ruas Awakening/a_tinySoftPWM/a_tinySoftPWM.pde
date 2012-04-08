@@ -6,7 +6,7 @@ int led[]={0,1,2,3,4};
 int count=0;
 
 void setup(){
-for (int z=1;z<6;z++){
+for (int z=0;z<6;z++){
 
 pinMode(led[z],OUTPUT);
 
@@ -17,7 +17,7 @@ pinMode(led[z],OUTPUT);
 
 void loop(){
   
-for (int x=0;x<254;x++){
+for (int x=1;x<254;x++){
   spwm(x,led[count],30);
 }
 for (int x=254;x>1;x--){
@@ -40,7 +40,7 @@ delayMicroseconds(sp*freq);
 
 // off
 digitalWrite(spin,LOW);
-delayMicroseconds(sp*(254-freq));
+delayMicroseconds(sp*(255-freq));
 
 
 } //spwm
