@@ -7,18 +7,18 @@ int led[]={
   0,1,2,3};
 int randomPin[]={
   1,2,3,4,5,6,7,8,9,10,11,12,6,5,7,4,8,3,9,2,10,2,3,4,5,6,7,8,9,10,11,12,6,5,7,4,8,3,9,2,10,1,11,12,9,7,5,3,1,2,4,6,8,10,11,12,3,2,5,8,6,5,9,12,3,4,5};
-int count=0;
 int maxBrightness=100;
 int arousalValue=0;
-int button=0;
-double dLay=20;
+int arousalStage = 0;
 double lightNum=0;
-int delayTime = 3;
-int aV;
+int delayTime = 4;
 int LEDcount;
 int r = 0;
 int y = 0;
 int charliePin;
+boolean buttonPressed = false;
+int timer;
+int arousalCount = 1000;
 
 
 void setup(){
@@ -27,47 +27,115 @@ void setup(){
   } //for z
 
   pinMode(4,INPUT);
-  //digitalWrite(4, HIGH); // no pull-up, use slider pin to GND instead
+  // UNCOMMENT FOR CAPE!!!:
+  digitalWrite(4, HIGH); // no pull-up, use slider pin to GND instead
 }
 
 
 
 void loop(){
- 
-  
-  arousalValue = analogRead(2);
-  r = randomPin[y];
-  
-  for (int x=1;x<254;x++) {
-    if(arousalValue < 200) spwm(x,r,delayTime);
-    if(arousalValue < 400) spwm(x,r+1,delayTime);
-    if(arousalValue < 600) spwm(x,r+2,delayTime);
-    if(arousalValue < 800) spwm(x,r+3,delayTime);
-    if(arousalValue < 1000) spwm(x,r+4,delayTime);
-
-  }
-  
-  for (int x=254;x>1;x--) {
-    if(arousalValue < 200) spwm(x,r,delayTime);
-    if(arousalValue < 400) spwm(x,r+1,delayTime);
-    if(arousalValue < 600) spwm(x,r+2,delayTime);
-    if(arousalValue < 800) spwm(x,r+3,delayTime);
-    if(arousalValue < 1000) spwm(x,r+4,delayTime);
-  }
-  
-  y++;
-  if(y > 24) y = 0;
+  //flowersLoop();
+  capeLoop();
+  //testLoop();
 }
+
 
 
 
 // blink through all 12 LEDs:
 void testLoop(){
   for (int i=1;i<13;i++) {
-    for (int x=1;x<254;x++) spwm(x,i,delayTime);
-    for (int x=254;x>1;x++) spwm(x,i,delayTime);
+    for (int x=1;x<254;x++) spwm(x,i,3);
+    for (int x=254;x>1;x--) spwm(x,i,3);
   }
 }
+
+
+void capeLoop(){
+  arousalValue = analogRead(2);
+
+  if(arousalValue < 400 && arousalValue > 100 && buttonPressed == false) {
+    buttonPressed = true;
+    arousalStage += 1;
+    if(arousalStage > 12) arousalStage = 12;
+  }
+  if(arousalValue < 100 && arousalValue > 0 && buttonPressed == false) {
+    buttonPressed = true;
+    arousalStage -= 1;
+    if(arousalStage < 0) arousalStage = 0;
+  }
+  if(arousalValue > 400) buttonPressed = false;
+
+  r = randomPin[y];
+
+  for (int x=1;x<254;x++) {
+    if(arousalStage == 0) spwm(x,r,1);
+    
+    if(arousalStage > 0) {
+      spwm(x,r,delayTime);
+    }
+    if(arousalStage > 1) {
+      spwm(x,r,delayTime);
+      spwm(x,r+1,delayTime);
+    }
+    if(arousalStage > 2) {
+      spwm(x,r,delayTime);
+      spwm(x,r+1,delayTime);
+      spwm(x,r+2,delayTime);
+    }
+  }
+  for (int x=254;x>1;x--) {
+    if(arousalStage == 0) spwm(x,r,1);
+    if(arousalStage > 0) {
+      spwm(x,r,delayTime);
+    }
+    if(arousalStage > 1) {
+      spwm(x,r,delayTime);
+      spwm(x,r+1,delayTime);
+    }
+    if(arousalStage > 2) {
+      spwm(x,r,delayTime);
+      spwm(x,r+1,delayTime);
+      spwm(x,r+2,delayTime);
+    }
+  }
+}
+
+
+
+
+void flowersLoop(){
+  arousalValue = analogRead(2);
+  r = randomPin[y];
+
+  for (int x=1;x<254;x++) {
+    if(arousalValue < 1000 && arousalValue > 900) spwm(x,r,15);
+    if(arousalValue < 900 && arousalValue > 800) spwm(x,r,6);
+    if(arousalValue < 800) spwm(x,r,delayTime);
+    if(arousalValue < 700) spwm(x,r+1,delayTime);
+    if(arousalValue < 600) spwm(x,r+2,delayTime);
+    if(arousalValue < 400) spwm(x,r+3,delayTime);
+    if(arousalValue < 200) spwm(x,r+4,delayTime);
+    if(arousalValue < 100) spwm(x,r+5,delayTime);
+
+  }
+
+  for (int x=254;x>1;x--) {
+    if(arousalValue < 1000 && arousalValue > 900) spwm(x,r,15);
+    if(arousalValue < 900 && arousalValue > 800) spwm(x,r,6);
+    if(arousalValue < 800) spwm(x,r,delayTime);
+    if(arousalValue < 700) spwm(x,r+1,delayTime);
+    if(arousalValue < 600) spwm(x,r+2,delayTime);
+    if(arousalValue < 400) spwm(x,r+3,delayTime);
+    if(arousalValue < 200) spwm(x,r+4,delayTime);
+    if(arousalValue < 100) spwm(x,r+5,delayTime);
+  }
+
+  y++;
+  if(y > 24) y = 0;
+}
+
+
 
 
 
@@ -88,7 +156,7 @@ void spwm(int freq,int pin,int sp){
 // charlieplexing sets correct pin outs and returns pin to spwm to:
 void charliePlexPin(int myLed){
   switch(myLed){
- 
+
     // 1
   case 1:
     pinMode(0, OUTPUT);
@@ -210,3 +278,13 @@ void charliePlexPin(int myLed){
     break;
   }
 }
+
+
+
+
+
+
+
+
+
+
