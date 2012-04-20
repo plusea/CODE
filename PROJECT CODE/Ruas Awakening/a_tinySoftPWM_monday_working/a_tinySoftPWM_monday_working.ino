@@ -31,14 +31,14 @@ void setup(){
 
   pinMode(4,INPUT);
   // UNCOMMENT FOR CAPE!!!:
-  digitalWrite(4, HIGH); // no pull-up, use slider pin to GND instead
+  //digitalWrite(4, HIGH); // no pull-up, use slider pin to GND instead
 }
 
 
 
 void loop(){
-  //flowersLoop();
-  capeLoop();
+  flowersLoop();
+  //capeLoop();
   //testLoop();
 }
 
