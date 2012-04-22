@@ -58,8 +58,11 @@ void loop() {
 
   int localMode = getMode();
   //allON();
-  ledPWMState(localMode);
-  delay(100);
+  if(localMode == 0)
+     allOFF();
+  else
+     ledRandomOn(localMode);
+  delay(30);
 
   //ledPWMState(led);
   //listenXIMU();
@@ -68,76 +71,27 @@ void loop() {
   //allON();
 }
 
-void updatePWM()
+
+
+
+
+
+void ledRandomOn(int ledCount) 
 {
-
-}
-
-
-void ledPWMState(int ledCount) 
-{
-  allOFF();
-  for (int i = 0; i < ledCount; i++)
+  int randomNum = random(0, 15 -ledCount);
+  if (randomNum == 0)
   {
-    int ledIndex = random(0, 16);
-    digitalWrite(leds[ledIndex], HIGH); 
+     allOFF();
+     for (int i = 0; i < ledCount; i++)
+     {
+       int ledIndex = random(0, 16);
+       digitalWrite(leds[ledIndex], HIGH); 
+     }
   }
 }
 
 
 
-
-
-
-void interpretModeSPWM() {
-
-
-  for(int x=1; x<254; x++) {
-    
-    for(int i=0; i<16; i++){
-      
-      mode = getMode();
-      
-      if(mode==0) {
-      }
-      if(mode > i+1) spwm(x,leds[i],delayTime);
-    }
-    //if(getMode() != mode) goto start;
-  }
-
-  // fade out:
-  for(int x=254; x>1; x--) {
-
-    for(int i=0; i<16; i++){
-     
-      mode = getMode();
-     
-      if(mode==0) {
-      }
-      
-      if(mode > i+1) spwm(x,leds[i],delayTime);
-    }
-    //if(getMode() != mode) goto start;
-  }
-
-}
-
-
-
-
-
-
-
-void ledOn(int ledIndex) 
-{
-  for(int i=0; i<16; i++)
-  {
-    if(i == ledIndex) 
-       digitalWrite(r[i], HIGH); 
-    else
-       digitalWrite(r[i], LOW);
-  }
-}
 
 void ledPWMState(int ledIndex, boolean state) 
 {
@@ -146,7 +100,6 @@ void ledPWMState(int ledIndex, boolean state)
     else
        digitalWrite(r[ledIndex], LOW);
 }
-
 
 
 
@@ -165,48 +118,6 @@ char getMode() {
   return lMode;
 }
 
-
-
-
-
-
-void listenXIMU() {
-  value1 = digitalRead(xIMUpin1);
-  value2 = digitalRead(xIMUpin2);
-  value3 = digitalRead(xIMUpin3);
-  value4 = digitalRead(xIMUpin4);
-
-  mode = 0x00;
-
-  //0-15
-  if(value1==1) mode |= 0x01;
-  if(value2==1) mode |= 0x01 << 1;
-  if(value3==1) mode |= 0x01 << 2;
-  if(value4==1) mode |= 0x01 << 3;
-}
-
-
-
-
-
-
-
-
-
-void singleOrder(){
-  // in order singles
-  for(int i = 0; i<numberLEDs; i++){
-    for(int x=1;x<254;x++) {
-      spwm(x,leds[i],delayTime);
-    }
-    for(int x=254;x>1;x--) {
-      spwm(x,leds[i],delayTime);
-    }
-  }
-}
-
-
-
 void allOFF(){
   for(int i = 0; i<numberLEDs; i++){
     digitalWrite(leds[i], 0);
@@ -220,55 +131,6 @@ void allON(){
   }
 }
 
-void allFADE(){
-  for(int x=1;x<254;x++) {
-    for(int i = 0; i<numberLEDs; i++) spwm(x,leds[i],delayTime);
-  }
-  for(int x=254;x>1;x--) {
-    for(int i = 0; i<numberLEDs; i++) spwm(x,leds[i],delayTime);
-  }
-}
-
-
-
-
-
-
-void spwm(int freq,int pin,int sp) {
-  //on
-  digitalWrite(pin,HIGH);
-  delayMicroseconds(sp*freq);
-  // off
-  digitalWrite(pin,LOW);
-  delayMicroseconds(sp*(255-freq));
-} //spwm
-
-
-
-
-
-
-
-/*void switchStatement(){
- switch(mode) {
- case(1):
- allON();
- break;
- case(2):
- allOFF();
- break;
- case(3):
- singleOrder();
- break;
- case(4):
- singleRandom():
- break;
- default:
- groupOrder
- break;  
- }
- }
- */
 
 
 
