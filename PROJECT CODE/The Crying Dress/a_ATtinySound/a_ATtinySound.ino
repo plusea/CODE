@@ -15,8 +15,8 @@
 #define sensorD 4
 #define sensorA 2 // pin PB4 = ADC2
 // turn pin PB3 on and off:
-#define f1On() PORTB |= 0b00001000
-#define f1Off() PORTB &= ~0b00001000
+#define f1On() PORTB |= 0b00000011
+#define f1Off() PORTB &= ~0b00000011
 // turn pin PB2 on and off:
 #define f2On() PORTB |= 0b00000010
 #define f2Off() PORTB &= ~0b00000010
@@ -28,16 +28,16 @@
 //#define sensorD 2
 //#define sensorA 1 // pin PB2 = ADC1
 //// turn pin PB4 on and off:
-//#define f1On() PORTB |= 0b00010000
-//#define f1Off() PORTB &= ~0b00010000
+//#define f1On() PORTB |= 0b00000100
+//#define f1Off() PORTB &= ~0b00000100
 //// turn pin PB3 on and off:
-//#define f2On() PORTB |= 0b00001000
-//#define f2Off() PORTB &= ~0b00001000
+//#define f2On() PORTB |= 0b00000011
+//#define f2Off() PORTB &= ~0b00000011
 ////////////////////////////////////////////////////////
 
 int sensorValue = 0;
 int timer = 0;
-int frequency = 1000;
+int frequency = 10000;
 
 void setup() 	 
 { 	 
@@ -57,39 +57,63 @@ void setup()
 void loop() 	// run over and over again
 { 	
   sensorValue = analogRead(sensorA);
-  if(sensorValue < 900) frequency = sensorValue;
-  else frequency = 1000;
+  //if(sensorValue < 900) frequency = sensorValue;
+  //else frequency = 1000;
 
   timer++;
-  
+
   for (int x = 1; x < 254; x++){
     analogWrite(led1, x);
-    analogWrite(led2, 254-x);
-    fastCry(frequency);
+    cry(f1, frequency);
+    delay(5);  
+
   }
 
   for (int x = 254; x > 1; x--){
     analogWrite(led1, x);
-    analogWrite(led2, 254-x); 
-    fastCry(frequency);   
+    cry(f1, frequency); 
+    delay(5);  
   }
-  
-    for (int x = 1000; x > 1; x--){
-    digitalWrite(led1, LOW);
-    digitalWrite(led2, HIGH); 
+
+  digitalWrite(led1, LOW);
+  digitalWrite(led2, LOW); 
+  delay(1000);
+
+  for (int x = 1; x < 254; x++){
+    analogWrite(led2, x);
+    cry(f2, frequency);
+    delay(5);  
   }
+
+  for (int x = 254; x > 1; x--){
+    analogWrite(led2, x);
+    cry(f2, frequency);  
+    delay(5);   
+  }
+
+
+  digitalWrite(led1, LOW);
+  digitalWrite(led2, LOW); 
+  delay(1000);
 
   //}
 } 	
 
 void fastCry(unsigned int freq){
   float halfT = 1000000.f / ((float)freq * 2.f);
-//  if(timer % 
   f1On();
   f2On();
   delayMicroseconds(halfT);
   f1Off();
   f2Off();
+  delayMicroseconds(halfT);   
+}
+
+void cry(int pin, unsigned int freq){
+  float halfT = 1000000.f / ((float)freq * 2.f);
+  digitalWrite(pin, HIGH);
+  delayMicroseconds(halfT);
+  digitalWrite(pin, LOW);
   delayMicroseconds(halfT);   
 }
 
@@ -159,6 +183,7 @@ void fastCry(unsigned int freq){
 //  }
 //
 //  delay(2000);
+
 
 
 
