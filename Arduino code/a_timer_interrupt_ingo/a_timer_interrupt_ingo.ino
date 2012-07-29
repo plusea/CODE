@@ -11,7 +11,8 @@ TCCR2B &= ~(1<<WGM22);
 ASSR &= ~(1<<AS2);  
 
 /* Disable Compare Match A interrupt enable (only want overflow) */  
-TIMSK2 &= ~(1<<OCIE2A);
+TIMSK2 &= ~
+(1<<OCIE2A);
 
 /* Now configure the prescaler to CPU clock divided by 1024 */
 TCCR2B = 1<<CS22 | 1<<CS21 | 1<<CS20;

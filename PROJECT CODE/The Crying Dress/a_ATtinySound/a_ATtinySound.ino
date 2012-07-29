@@ -3,7 +3,7 @@
  */
 // mika = 0: pins 2,3 frequency, 5,6 LED
 // hannah = 1:  
-
+#include <avr/io.h>
 // LED fade pins are fixed because of hardware PWM:
 #define led1 0  // pin 5
 #define led2 1  // pin 6
