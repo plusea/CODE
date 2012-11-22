@@ -34,11 +34,9 @@ void loop(){
 
 // blink through all 12 LEDs:
 void testLoop(){
-  for (int i=0;i<4;i++) {
-    for (int pin=0;pin<4;pin++) {
-      for (int x=1;x<254;x++) spwm(x,i,3);
-      for (int x=254;x>1;x--) spwm(x,i,3);
-    }
+    for (int c=1;c<13;c++) {
+      charliePlexPin(c);
+      delay(100);
   }
 }
 
@@ -58,7 +56,7 @@ void charliePlexPin(int myLed){
     pinMode(2, INPUT);
     pinMode(3, INPUT);
     digitalWrite(0, LOW);
-    charliePin = 1;
+    digitalWrite(1, HIGH);
     break;
 
     // 2
@@ -68,7 +66,7 @@ void charliePlexPin(int myLed){
     pinMode(2, OUTPUT);
     pinMode(3, INPUT);
     digitalWrite(0, LOW);
-    charliePin = 2;
+    digitalWrite(2, HIGH);
     break;
 
     // 3
@@ -78,7 +76,7 @@ void charliePlexPin(int myLed){
     pinMode(2, INPUT);
     pinMode(3, OUTPUT);
     digitalWrite(0, LOW);
-    charliePin = 3;
+    digitalWrite(3, HIGH);
     break;
 
     // 4
@@ -88,7 +86,7 @@ void charliePlexPin(int myLed){
     pinMode(2, INPUT);
     pinMode(3, INPUT);
     digitalWrite(1, LOW);
-    charliePin = 0;
+    digitalWrite(0, HIGH);
     break;
 
     // 5
@@ -98,7 +96,7 @@ void charliePlexPin(int myLed){
     pinMode(2, OUTPUT);
     pinMode(3, INPUT);
     digitalWrite(1, LOW);
-    charliePin = 2;
+    digitalWrite(2, HIGH);
     break;
 
     // 6
@@ -108,7 +106,7 @@ void charliePlexPin(int myLed){
     pinMode(2, INPUT);
     pinMode(3, OUTPUT);
     digitalWrite(1, LOW);
-    charliePin = 3;
+    digitalWrite(3, HIGH);
     break;
 
     // 7
@@ -118,7 +116,7 @@ void charliePlexPin(int myLed){
     pinMode(2, OUTPUT);
     pinMode(3, INPUT);
     digitalWrite(2, LOW);
-    charliePin = 0;
+    digitalWrite(0, LOW);
     break;
 
     // 8
@@ -128,7 +126,7 @@ void charliePlexPin(int myLed){
     pinMode(2, OUTPUT);
     pinMode(3, INPUT);
     digitalWrite(2, LOW);
-    charliePin = 1;
+    digitalWrite(1, HIGH);
     break;
 
     // 9
@@ -138,7 +136,7 @@ void charliePlexPin(int myLed){
     pinMode(2, OUTPUT);
     pinMode(3, OUTPUT);
     digitalWrite(2, LOW);
-    charliePin = 3;
+    digitalWrite(3, HIGH);
     break;
 
     // 10
@@ -148,7 +146,7 @@ void charliePlexPin(int myLed){
     pinMode(2, INPUT);
     pinMode(3, OUTPUT);
     digitalWrite(3, LOW);
-    charliePin = 0;
+    digitalWrite(0, HIGH);
     break;
 
     // 11
@@ -158,7 +156,7 @@ void charliePlexPin(int myLed){
     pinMode(2, INPUT);
     pinMode(3, OUTPUT);
     digitalWrite(3, LOW);
-    charliePin = 1;
+    digitalWrite(1, HIGH);
     break;
 
     // 12
@@ -168,7 +166,7 @@ void charliePlexPin(int myLed){
     pinMode(2, OUTPUT);
     pinMode(3, OUTPUT);
     digitalWrite(3, LOW);
-    charliePin = 2;
+    digitalWrite(2, HIGH);
     break;
   }
 }
