@@ -1,51 +1,79 @@
-/*
-Reads analog input from one pin and every time the input goes bellow a set threshold 
- it counts one and displays the increase in count on a 7-segment LED display
- */
+//ATtiny code
+//Reads analog (or digital) input from pin 4 and every time the input goes bellow a set threshold 
+//it counts one and displays the increase in count either by activating up one of four LEDs (or transistors)
+//or one of twelve charlieplexed LEDs
 
-
+// SET THESE VALUES:
+int option = 3; //options: 1,2 or 3!
+int threshold = 500;
+////////////////////
+int maxCount;
+boolean sensorTriggered = false;
 int count = 0;
-int charliePin;
 int sensorValue = 0;
-int itteration = 0;
-
-
-
+int lastButtonState;
+// the following variables are long's because the time, measured in miliseconds,
+// will quickly become a bigger number than can be stored in an int.
+long lastDebounceTime = 0;  // the last time the output pin was toggled
+long debounceDelay = 50;    // the debounce time; increase if the output flickers
+////////////////////////////////////////////////////////////////////////////////
 void setup(){
+  if(option == 1 || option == 2) maxCount = 4;
+  if(option == 3) maxCount = 12;
   for (int pin=0;pin<4;pin++){
     pinMode(pin,OUTPUT);
+    digitalWrite(pin, LOW);
   }
-
   pinMode(4,INPUT);
-  digitalWrite(4, HIGH);
+  digitalWrite(4, HIGH);  //internal pull-up
 }
-
-
-
+////////////////////////////////////////////////////////////////////////////////
 void loop(){
-  //sensorValue = analogRead(2);
-  //if(sensorValue < threshold) count++;
-
-  testLoop();
+  //readSensor();
+  testDigits();
 }
+void testDigits(){
+    if(option == 1 || option == 2) fourLoop();
+    if(option == 3) charlieLoop();
+}
+////////////////////////////////////////////////////////////////////////////////
+void readSensor(){
+  sensorValue = analogRead(2);  //pin4!
+  delay(100);
+  if(sensorValue < threshold && sensorTriggered == false) {
+    sensorTriggered = true;
+    count++;
+    if(count > maxCount) count = 0;
+    if(option == 1 || option == 2) fourLoop();
+    if(option == 3) charlieLoop();
+  }
+  if(sensorValue > threshold) sensorTriggered = false;
+}
+////////////////////////////////////////////////////////////////////////////////
+void fourLoop(){
+  for (int i=0;i<count;i++) {
+    digitalWrite(i, HIGH);
+  }
+  for (int i=count;i<maxCount;i++) {
+    digitalWrite(i, LOW);
+  }
 
-
-
-
-// blink through all 12 LEDs:
-void testLoop(){
-    for (int c=1;c<13;c++) {
-      charliePlexPin(c);
-      delay(100);
+}
+////////////////////////////////////////////////////////////////////////////////
+void charlieLoop(){
+  for (int i=1;i<maxCount;i++) {
+    charliePlexPin(i);
+    delay(300);
   }
 }
-
-
-
-
-
-
-// charlieplexing sets correct pin outs and returns pin to spwm to:
+////////////////////////////////////////////////////////////////////////////////
+void testLoop(){
+  for (int c=1;c<13;c++) {
+    charliePlexPin(c);
+    delay(100);
+  }
+}
+////////////////////////////////////////////////////////////////////////////////
 void charliePlexPin(int myLed){
   switch(myLed){
 
@@ -170,26 +198,20 @@ void charliePlexPin(int myLed){
     break;
   }
 }
-
-
-
-
-
-
-
-
-
-
-// software PWM
+////////////////////////////////////////////////////////////////////////////////
 void spwm(int freq,int pin,int sp){
   // call charlieplexing to set correct pin outs:
-  charliePlexPin(pin);
   //on:
-  digitalWrite(charliePin,HIGH);
+  digitalWrite(pin,HIGH);
   delayMicroseconds(sp*freq);
   // off:
-  digitalWrite(charliePin,LOW);
+  digitalWrite(pin,LOW);
   delayMicroseconds(sp*(255-freq));
 }
+
+
+
+
+
 
 
