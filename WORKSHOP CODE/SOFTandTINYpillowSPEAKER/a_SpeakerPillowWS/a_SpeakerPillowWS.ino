@@ -4,65 +4,113 @@
 
 
 
-#define speakerPin 0
-#define buttonPin 3
-#define sensorPin 4
+int speakerPin = 0;
+int buttonPin = 4; // digitalPin4 = adc2
+int sensorPin = 3; // digitalPin3 = adc3
+int sensorADC = 3;
 int sensorValue = 0;
 int buttonValue = 0;
 
-
+#include "pitches.h"
 
 void setup() {
   pinMode(speakerPin, OUTPUT);
-  pinMode(sensorPin, INPUT_PULLUP);
-  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(sensorPin, INPUT);
+  digitalWrite(sensorPin, HIGH);
+  pinMode(buttonPin, INPUT);
+  digitalWrite(buttonPin, HIGH);
 }
 
 
 
 void loop() {
-  sensorValue = analogRead(2);
-  if(sensorValue < 900) makeNoise(speakerPin, sensorValue*3);
-
-  buttonValue = digitalRead(3);
-  if(buttonValue == 0) playMelody(speakerPin);
-  else noTone();
+  sensorValue = analogRead(sensorADC);
+  
+  if(sensorValue < 900) makeNoise(speakerPin, sensorValue*3, 100);
+  
+  //if(sensorValue < 700) playMelody(speakerPin);
+  
+  //buttonValue = digitalRead(buttonPin);
+  //if(buttonValue == 0) playMelody(speakerPin);
 }
 
 
 
-void makeNoise(unsigned char speakerPin, int frequencyInHertz, long timeInMilliseconds) { 	 
+void makeNoise(unsigned char pin, int frequencyInHertz, long timeInMilliseconds) { 	 
   int x; 	 
   long delayAmount = (long)(1000000/frequencyInHertz);
   long loopTime = (long)((timeInMilliseconds*1000)/(delayAmount*2));
   for (x=0;x<loopTime;x++) 	 
   { 	 
-    digitalWrite(speakerPin,HIGH);
+    digitalWrite(pin,HIGH);
     delayMicroseconds(delayAmount);
-    digitalWrite(speakerPin,LOW);
+    digitalWrite(pin,LOW);
     delayMicroseconds(delayAmount);
   } 	 
 } 
 
 
-void playPiano(unsigned char pin, int frequencyInHertz) {
-  makeNoise(speakerPin, 2093, 100);
-  delay(10);
-  makeNoise(speakerPin, 2349, 100);
-  delay(10);
-  makeNoise(speakerPin, 2637, 100);
-  delay(10);
-  makeNoise(speakerPin, 2793, 100);
-  delay(10);
-  makeNoise(speakerPin, 3136, 100);
-  delay(10);
-  makeNoise(speakerPin, 3520, 100);
-  delay(10);
-  makeNoise(speakerPin, 3951, 100);
-  delay(10);
-  makeNoise(speakerPin, 4186, 100);
-  delay(10);
+void playMelody(unsigned char pin) {
+  // Brahms' Lullaby (cradle song)
+  makeNoise(pin, NOTE_E5, 300);
+  delay(10);  
+  makeNoise(pin, NOTE_E5, 300);
+  delay(10);  
+  makeNoise(pin, NOTE_G5, 600);
+  delay(100); 
+  makeNoise(pin, NOTE_E5, 300);
+  delay(10);  
+  makeNoise(pin, NOTE_E5, 300);
+  delay(10);  
+  makeNoise(pin, NOTE_G5, 600);
+  delay(100); 
+  makeNoise(pin, NOTE_E5, 300);
+  delay(50);  
+  makeNoise(pin, NOTE_G5, 300);
+  delay(10);  
+  makeNoise(pin, NOTE_C6, 500);
+  delay(100);  
+  makeNoise(pin, NOTE_B5, 600);
+  delay(100);  
+  makeNoise(pin, NOTE_A5, 400);
+  delay(100); 
+  makeNoise(pin, NOTE_A5, 500);
+  delay(100);   
+  makeNoise(pin, NOTE_G5, 600);
+  delay(200); 
+  makeNoise(pin, NOTE_D5, 300);
+  delay(50);  
+  makeNoise(pin, NOTE_E5, 300);
+  delay(100); 
+  makeNoise(pin, NOTE_F5, 400);
+  delay(100);
+  makeNoise(pin, NOTE_D5, 600);
+  delay(200); 
+  makeNoise(pin, NOTE_D5, 300);
+  delay(100);  
+  makeNoise(pin, NOTE_E5, 300);
+  delay(100);  
+  makeNoise(pin, NOTE_F5, 600);
+  delay(200); 
+  makeNoise(pin, NOTE_D5, 400);
+  delay(100); 
+  makeNoise(pin, NOTE_F5, 400);
+  delay(100); 
+  makeNoise(pin, NOTE_B5, 300);
+  delay(10); 
+  makeNoise(pin, NOTE_A5, 300);
+  delay(100);
+  makeNoise(pin, NOTE_G5, 500);
+  delay(200); 
+  makeNoise(pin, NOTE_B5, 600);
+  delay(100); 
+  makeNoise(pin, NOTE_C6, 800); 
 }
+
+
+
+
+
 
 
 
