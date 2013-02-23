@@ -87,7 +87,7 @@ void serialEvent (Serial myPort) {
 
         stroke(127);
         smooth();
-        strokeWeight(.5);
+        strokeWeight(5);
         // change colors to draw the graph line:
         //stroke(64*i, 32*i, 255);
         stroke(0);
@@ -98,7 +98,7 @@ void serialEvent (Serial myPort) {
     }
     // if you've drawn to the edge of the window, start at the beginning again:
     if (xpos >= width) {
-      saveFrame();
+      //saveFrame();
       xpos = 0;
       background(255);
     } 
