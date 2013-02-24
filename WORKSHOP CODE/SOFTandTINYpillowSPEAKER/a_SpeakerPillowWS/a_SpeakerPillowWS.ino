@@ -1,13 +1,9 @@
-// code for ATtiny
+// code for ATtiny45 or 85
 // reads digital value and plays melody when triggered
 // reads analog value and maps the value directly to a frequency
 
-
-
 int speakerPin = 0;
-int buttonPin = 4; // digitalPin4 = adc2
-int sensorPin = 3; // digitalPin3 = adc3
-int sensorADC = 3;
+int sensorPin = 3; // digital Pin 3 = ADC 3
 int sensorValue = 0;
 int buttonValue = 0;
 
@@ -15,25 +11,14 @@ int buttonValue = 0;
 
 void setup() {
   pinMode(speakerPin, OUTPUT);
-  pinMode(sensorPin, INPUT);
-  digitalWrite(sensorPin, HIGH);
-  pinMode(buttonPin, INPUT);
-  digitalWrite(buttonPin, HIGH);
+  pinMode(sensorPin, INPUT_PULLUP);
 }
-
-
 
 void loop() {
-  sensorValue = analogRead(sensorADC);
-  
+  sensorValue = analogRead(sensorPin);
   if(sensorValue < 900) makeNoise(speakerPin, sensorValue*3, 100);
-  
   //if(sensorValue < 700) playMelody(speakerPin);
-  
-  //buttonValue = digitalRead(buttonPin);
-  //if(buttonValue == 0) playMelody(speakerPin);
 }
-
 
 
 void makeNoise(unsigned char pin, int frequencyInHertz, long timeInMilliseconds) { 	 
