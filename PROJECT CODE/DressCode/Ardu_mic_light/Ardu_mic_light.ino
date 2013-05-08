@@ -1,7 +1,7 @@
 // code for arduino to read analog values from a mic and
 // translate these into light patterns
 // charlieplexing possible for more lights
-
+itu
 int value;
 int previousValue;
 #define sensitivity 5
@@ -18,7 +18,28 @@ void setup() {
 }
 
 void loop() {
+value = analogRead(A0);
+Serial.println(value);
 
+if(value > 80){ digitalWrite(9, HIGH);
+delay(40);}
+else digitalWrite(9, LOW);
+  
+  if(value > 90) {digitalWrite(8, HIGH);
+  delay(50);}
+  digitalWrite(8, LOW);
+  
+  
+    if(value > 100) {
+      digitalWrite(7, HIGH);
+      delay(50);}
+  digitalWrite(7, LOW);
+  
+}
+  
+  
+void differenceLoop() {
+  
   value = analogRead(A0);
   Serial.println(value);
   
