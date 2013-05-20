@@ -20,10 +20,10 @@ void loop() {
  sensorValue = analogRead(sensorPin);   
  Serial.println(sensorValue); 
    //delay(100); 
-  if(sensorValue < 300) digitalWrite(ledPin1, HIGH);
-  if(sensorValue < 150) digitalWrite(ledPin2, HIGH);
-  if(sensorValue < 100) digitalWrite(ledPin3, HIGH);
-  if (sensorValue >= 200){
+  if(sensorValue > 900) digitalWrite(ledPin3, HIGH);
+  if(sensorValue > 500) digitalWrite(ledPin2, HIGH);
+  if(sensorValue > 300) digitalWrite(ledPin1, HIGH);
+  if (sensorValue <= 300){
     digitalWrite(ledPin1, LOW);
     digitalWrite(ledPin2, LOW);
     digitalWrite(ledPin3, LOW);
