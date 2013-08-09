@@ -1,6 +1,6 @@
 import processing.serial.*;
  
-int maxNumberOfSensors = 2;       // Arduino has 6 analog inputs, so I chose 6
+int maxNumberOfSensors = 3;       // Arduino has 6 analog inputs, so I chose 6
 boolean fontInitialized = false;  // whether the font's been initialized
 Serial myPort;                    // The serial port
  
@@ -10,8 +10,8 @@ PFont myFont;                     // font for writing text to the window
  
 void setup () {
   // set up the window to whatever size you want:
-  size(displayWidth, displayHeight);
-  //size(1800, 1000);        
+  //size(displayWidth, displayHeight);
+  size(800, 600);        
   // List all the available serial ports:
   println(Serial.list());
   // I know that the first port in the serial list on my mac
