@@ -1,6 +1,6 @@
 import processing.serial.*;
  
-int maxNumberOfSensors = 3;       // Arduino has 6 analog inputs, so I chose 6
+int maxNumberOfSensors = 1;       // Arduino has 6 analog inputs, so I chose 6
 boolean fontInitialized = false;  // whether the font's been initialized
 Serial myPort;                    // The serial port
  
@@ -31,6 +31,8 @@ void setup () {
   // turn on antialiasing:
   smooth();
   strokeWeight(10);
+  myPort.write(maxNumberOfSensors);
+  myPort.write('N');
 }
  
 void draw () {

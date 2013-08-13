@@ -8,5 +8,6 @@ void sound()
   if (sensorValues[5] > 1) kick2.trigger();
   if (sensorValues[6] > 1) loosekick.trigger();
   if (sensorValues[7] > 1) loosekick2.trigger();
+  if (sensorValues[8] > 1) bass.trigger();
   //if (sensorValues[8] > 1) sample.trigger();
 }
