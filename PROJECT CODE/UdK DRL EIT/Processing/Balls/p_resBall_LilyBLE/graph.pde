@@ -10,19 +10,19 @@ void graph() {
     ypos = ypos + graphBottom;
 
     // make a black block to erase the previous text:
-    noStroke();
-    fill(0);
-    rect(10, graphBottom+1, 110, 20);
+    //noStroke();
+    //fill(0);
+    //rect(10, graphBottom+1, 110, 20);
 
     // print the sensor numbers to the screen:
-    fill(255);
-    int textPos = int(graphBottom) + 14;
+    //fill(255);
+    //int textPos = int(graphBottom) + 14;
     // sometimes serialEvent() can happen before setup() is done.
     // so you need to make sure the font is initialized before
     // you text():
-    if (fontInitialized) {
-      text("Sensor " + i + ":" + sensorValues[i], 10, textPos);
-    }
+    //if (fontInitialized) {
+    // text("Sensor " + i + ":" + sensorValues[i], 10, textPos);
+   // }
     // draw a line at the bottom of each graph:
     stroke(127);
     line(0, graphBottom, width, graphBottom);
@@ -35,7 +35,7 @@ void graph() {
   // if you've drawn to the edge of the window, start at the beginning again:
   if (xpos >= width) {
     xpos = 0;
-    background(0);
+    background(255);
   } 
   else {
     xpos++;

@@ -11,7 +11,10 @@ void serialEvent (Serial myPort) {
     int incomingValues[] = int(split(inString, ","));
 
     if (incomingValues.length <= maxNumberOfSensors && incomingValues.length > 0) {
-      for (int i = 0; i < incomingValues.length; i++) sensorValues[i] = incomingValues[i];
+      for (int i = 0; i < incomingValues.length; i++) {
+        sensorValues[i] = incomingValues[i];
+        //println(sensorValues[i]);
+      }
     }
   }
 }
