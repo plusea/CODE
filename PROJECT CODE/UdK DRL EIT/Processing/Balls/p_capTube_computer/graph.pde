@@ -21,7 +21,7 @@ void graph() {
     // so you need to make sure the font is initialized before
     // you text():
     if (fontInitialized) {
-      text("Sensor " + i + ":" + sensorValues[i], 10, textPos);
+    // text("Sensor " + i + ":" + sensorValues[i], 10, textPos);
     }
     // draw a line at the bottom of each graph:
     stroke(127);
@@ -35,7 +35,7 @@ void graph() {
   // if you've drawn to the edge of the window, start at the beginning again:
   if (xpos >= width) {
     xpos = 0;
-    background(0);
+    background(255);
   } 
   else {
     xpos++;

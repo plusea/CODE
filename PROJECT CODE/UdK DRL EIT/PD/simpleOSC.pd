@@ -1,0 +1,15 @@
+#N canvas 910 130 796 611 10;
+#X obj 99 168 dac~;
+#X obj 97 123 osc~ 440;
+#X floatatom 86 31 5 0 0 0 - - -;
+#X obj 94 58 mtof;
+#X floatatom 48 93 5 0 0 0 - - -;
+#X obj 238 151 table notes 16;
+#X msg 492 51;
+#X msg 458 95 \; notes 0 12 3 5 7 8 12;
+#X obj 240 71 tabread notes;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 0 4 0;
