@@ -9,7 +9,7 @@ and carriage returns after each full set of sensor values.
 
 import processing.serial.*;
 
-int maxNumberOfSensors = 2;       // Arduino has 6 analog inputs, so I chose 6
+int maxNumberOfSensors = 1;       // Arduino has 6 analog inputs, so I chose 6
 boolean fontInitialized = false;  // whether the font's been initialized
 Serial myPort;                    // The serial port
 
