@@ -75,8 +75,8 @@ void charliePlex(int myLed){
 
     // 5
   case 5:
-    pinMode(0, OUTPUT);
-    pinMode(1, INPUT);
+    pinMode(0, INPUT);
+    pinMode(1, OUTPUT);
     pinMode(2, OUTPUT);
     pinMode(3, INPUT);
     pinMode(4, INPUT);
@@ -125,9 +125,7 @@ void charliePlex(int myLed){
     pinMode(3, OUTPUT);
     pinMode(4, INPUT);
     digitalWrite(2, LOW);
-    for (int x=1;x<254;x++) spwm(x,3,delayTime);
-    for (int x=254;x>1;x--) spwm(x,3,delayTime);
-    delay(testDelay);
+    charliePin = 3;
     break;
 
     // 10
