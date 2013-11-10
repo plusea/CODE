@@ -1,6 +1,6 @@
 import processing.serial.*;
  
-int maxNumberOfSensors = 3;       // Arduino has 6 analog inputs, so I chose 6
+int maxNumberOfSensors = 1;       // Arduino has 6 analog inputs, so I chose 6
 boolean fontInitialized = false;  // whether the font's been initialized
 Serial myPort;                    // The serial port
  
@@ -17,7 +17,7 @@ void setup () {
   // I know that the first port in the serial list on my mac
   // is always my  Arduino or Wiring module, so I open Serial.list()[0].
   // Open whatever port is the one you're using.
-  String portName = Serial.list()[4];
+  String portName = Serial.list()[0];
   myPort = new Serial(this, portName, 9600);
   myPort.clear();
   // don't generate a serialEvent() until you get a newline (\n) byte:
