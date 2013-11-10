@@ -37,7 +37,8 @@ float green;
 float blue;
 int count;
 boolean setPosition = false;
-
+int colorValue = 0;
+int circleSpeed = 35;
 // define data type struct color:
 typedef struct color { 
   byte r, g, b; 
@@ -48,9 +49,25 @@ color;
 color pixels[LEDtotal];
 
 struct color colorOFF = { 
-  0,0,0 };
+  1,1,1 };
+
 struct color colorON = { 
-  254, 254, 254 };
+  255, 255, 255 };
+
+struct color colorRed = { 
+  255, 1, 1 };
+
+struct color colorYellow = { 
+  255, 255, 1 };
+  
+  struct color colorTurquoise = { 
+  1, 255, 255 };
+  
+  struct color colorPurple = { 
+  255, 1, 255 };
+  
+  struct color myColor = { 
+  200,0,0 };
 
 
 void setup() {
@@ -67,7 +84,19 @@ void setup() {
   digitalWrite(14, LOW);
   digitalWrite(16, HIGH);
   Serial.begin(9600);
+  
+  for(int i=0; i<20; i++) blinkAll();
 }
+
+
+
+void loop() {
+  //allON();
+  //drawCircle();  // call drawCircle function
+  animateCircle();
+  //blinkAll();
+}
+
 
 
 void show(byte *bytes, int size) {
@@ -80,11 +109,6 @@ void show(byte *bytes, int size) {
   }
 }
 
-
-void loop() {
-    drawCircle();  // call drawCircle function
-    show((byte *)pixels, sizeof(pixels));  // update pixels
-}
 
 
 
