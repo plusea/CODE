@@ -1,11 +1,11 @@
 /*
 Code based on Tom Igoe's Serial Graphing Sketch
->> http://processing.org/exhibition/features/igoe/
-
-Reads analog inputs and sends them as a series of strings seperated with commas,
-and carriage returns after each full set of sensor values.
+ >> http://processing.org/exhibition/features/igoe/
+ 
+ Reads analog inputs and sends them as a series of strings seperated with commas,
+ and carriage returns after each full set of sensor values.
  >> http://www.kobakant.at/DIY/?cat=347
-*/
+ */
 
 import processing.serial.*;
 
@@ -81,28 +81,42 @@ void serialEvent (Serial myPort) {
         // sometimes serialEvent() can happen before setup() is done.
         // so you need to make sure the font is initialized before
         // you text():
-        if (fontInitialized) {
+        if (fontInitialized) 
+        {
           //text("Sensor " + i + ":" + incomingValues[i], 10, textPos);
         }
 
-        stroke(127);
+        //stroke(127);
         smooth();
-        strokeWeight(5);
+        strokeWeight(1);
         // change colors to draw the graph line:
         //stroke(64*i, 32*i, 255);
-        stroke(0);
-        line(xpos, height-previousValue[i], xpos+1, height-ypos);
+        //stroke(0);
+        if (ypos > 512)
+        {
+      //    stroke(color(ypos/4,0,0));
+          stroke(#ff0000);
+        }
+        
+                else
+        {
+          stroke(0);
+        }
+        
+                line(xpos, height /*height-previousValue[i]*/, xpos /*+1*/, height-ypos);
         // save the current value to be the next time's previous value:
         previousValue[i] = ypos;
       }
     }
     // if you've drawn to the edge of the window, start at the beginning again:
-    if (xpos >= width) {
+    if (xpos >= width)
+    {
       //saveFrame();
       xpos = 0;
       background(255);
     } 
-    else {
+    else
+    {
       xpos+=.25;
     }
   }
@@ -112,6 +126,7 @@ void keyPressed(){
   if (key==' ')
     saveFrame();
 }
+
 
 
 

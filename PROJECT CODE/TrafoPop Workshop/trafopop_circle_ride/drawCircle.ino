@@ -46,6 +46,8 @@ inline void drawCircle() {
     fadeCount = sensorValue;  //+=fadeAmount;
 
   }
+  
+  show((byte *)pixels, sizeof(pixels));  // update pixels
 }
 
 

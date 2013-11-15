@@ -3,23 +3,27 @@
  */
 
 int led[]={
-  0,1,2,3,4};
-int numberLEDs = 5;
+  0,1,2,3};
+int numberPins = 4;
+int numberCharlies = 8;
 int delayTime = 12;
 int testDelay = 250;
 int charliePin;
 
 void setup(){
-  for(int z=0;z<numberLEDs;z++) pinMode(led[z], OUTPUT);
-  for(int z=0;z<numberLEDs;z++) digitalWrite(led[z], LOW);
+  for(int z=0;z<numberPins;z++) pinMode(led[z], OUTPUT);
+  for(int z=0;z<numberPins;z++) digitalWrite(led[z], LOW);
+  
+  pinMode(4, INPUT);
+  digitalWrite(4, HIGH);
 }
 
 
 void loop(){
-  for (int i=0;i<20;i++) {
+  for (int i=0;i<numberCharlies;i++) {
     charliePlex(i+1);
     digitalWrite(charliePin, HIGH);
-    delay(100);
+    delay(50);
     digitalWrite(charliePin, LOW);
   }
 }
@@ -35,7 +39,6 @@ void charliePlex(int myLed){
     pinMode(1, OUTPUT);
     pinMode(2, INPUT);
     pinMode(3, INPUT);
-    pinMode(4, INPUT);
     digitalWrite(0, LOW);
     charliePin = 1;
     break;
@@ -46,7 +49,6 @@ void charliePlex(int myLed){
     pinMode(1, INPUT);
     pinMode(2, OUTPUT);
     pinMode(3, INPUT);
-    pinMode(4, INPUT);
     digitalWrite(0, LOW);
     charliePin = 2;
     break;
@@ -57,7 +59,6 @@ void charliePlex(int myLed){
     pinMode(1, INPUT);
     pinMode(2, INPUT);
     pinMode(3, OUTPUT);
-    pinMode(4, INPUT);
     digitalWrite(0, LOW);
     charliePin = 3;
     break;
@@ -68,7 +69,6 @@ void charliePlex(int myLed){
     pinMode(1, OUTPUT);
     pinMode(2, INPUT);
     pinMode(3, INPUT);
-    pinMode(4, INPUT);
     digitalWrite(1, LOW);
     charliePin = 0;
     break;
@@ -79,7 +79,6 @@ void charliePlex(int myLed){
     pinMode(1, OUTPUT);
     pinMode(2, OUTPUT);
     pinMode(3, INPUT);
-    pinMode(4, INPUT);
     digitalWrite(1, LOW);
     charliePin = 2;
     break;
@@ -90,7 +89,6 @@ void charliePlex(int myLed){
     pinMode(1, OUTPUT);
     pinMode(2, INPUT);
     pinMode(3, OUTPUT);
-    pinMode(4, INPUT);
     digitalWrite(1, LOW);
     charliePin = 3;
     break;
@@ -101,7 +99,6 @@ void charliePlex(int myLed){
     pinMode(1, INPUT);
     pinMode(2, OUTPUT);
     pinMode(3, INPUT);
-    pinMode(4, INPUT);
     digitalWrite(2, LOW);
     charliePin = 0;
     break;
@@ -112,7 +109,6 @@ void charliePlex(int myLed){
     pinMode(1, OUTPUT);
     pinMode(2, OUTPUT);
     pinMode(3, INPUT);
-    pinMode(4, INPUT);
     digitalWrite(2, LOW);
     charliePin = 1;
     break;
@@ -123,7 +119,6 @@ void charliePlex(int myLed){
     pinMode(1, INPUT);
     pinMode(2, OUTPUT);
     pinMode(3, OUTPUT);
-    pinMode(4, INPUT);
     digitalWrite(2, LOW);
     charliePin = 3;
     break;
@@ -134,7 +129,6 @@ void charliePlex(int myLed){
     pinMode(1, INPUT);
     pinMode(2, INPUT);
     pinMode(3, OUTPUT);
-    pinMode(4, INPUT);
     digitalWrite(3, LOW);
     charliePin = 0;
     break;
@@ -145,7 +139,6 @@ void charliePlex(int myLed){
     pinMode(1, OUTPUT);
     pinMode(2, INPUT);
     pinMode(3, OUTPUT);
-    pinMode(4, INPUT);
     digitalWrite(3, LOW);
     charliePin = 1;
     break;
@@ -156,98 +149,8 @@ void charliePlex(int myLed){
     pinMode(1, INPUT);
     pinMode(2, OUTPUT);
     pinMode(3, OUTPUT);
-    pinMode(4, INPUT);
     digitalWrite(3, LOW);
     charliePin = 2;
-    break;
-
-    // 13
-  case 13:
-    pinMode(0, OUTPUT);
-    pinMode(1, INPUT);
-    pinMode(2, INPUT);
-    pinMode(3, INPUT);
-    pinMode(4, OUTPUT);
-    digitalWrite(0, LOW);
-    charliePin = 4;
-    break;
-
-    // 14
-  case 14:
-    pinMode(0, OUTPUT);
-    pinMode(1, INPUT);
-    pinMode(2, INPUT);
-    pinMode(3, INPUT);
-    pinMode(4, OUTPUT);
-    digitalWrite(4, LOW);
-    charliePin = 0;
-    break;
-
-    // 15
-  case 15:
-    pinMode(0, INPUT);
-    pinMode(1, OUTPUT);
-    pinMode(2, INPUT);
-    pinMode(3, INPUT);
-    pinMode(4, OUTPUT);
-    digitalWrite(1, LOW);
-    charliePin = 4;
-    break;
-
-
-    // 16
-  case 16:
-    pinMode(0, INPUT);
-    pinMode(1, OUTPUT);
-    pinMode(2, INPUT);
-    pinMode(3, INPUT);
-    pinMode(4, OUTPUT);
-    digitalWrite(4, LOW);
-    charliePin = 1;
-    break;
-
-    // 17
-  case 17:
-    pinMode(0, INPUT);
-    pinMode(1, INPUT);
-    pinMode(2, OUTPUT);
-    pinMode(3, INPUT);
-    pinMode(4, OUTPUT);
-    digitalWrite(2, LOW);
-    charliePin = 4;
-    break;
-
-    // 18
-  case 18:
-    pinMode(0, INPUT);
-    pinMode(1, INPUT);
-    pinMode(2, INPUT);
-    pinMode(3, OUTPUT);
-    pinMode(4, OUTPUT);
-    digitalWrite(4, LOW);
-    charliePin = 2;
-    break;
-
-    // 19
-  case 19:
-    pinMode(0, INPUT);
-    pinMode(1, INPUT);
-    pinMode(2, INPUT);
-    pinMode(3, OUTPUT);
-    pinMode(4, OUTPUT);
-    digitalWrite(3, LOW);
-    charliePin = 4;
-    break;
-
-    // 20
-  case 20:
-    pinMode(0, INPUT);
-    pinMode(1, INPUT);
-    pinMode(2, INPUT);
-    pinMode(3, OUTPUT);
-    pinMode(4, OUTPUT);
-    digitalWrite(4, LOW);
-    charliePin = 3;
     break;
   }
 }
