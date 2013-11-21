@@ -3,7 +3,7 @@
 #include <SoftwareSerial.h>
 
 SoftwareSerial mySerial(5, 1); // RX, TX
-int resPin1 = 1;
+int resPin1 = 0;
 int resValue1;
 int resPin2 = 2;
 int resValue2;
@@ -24,8 +24,11 @@ void setup()
   digitalWrite(2, HIGH);  //internal pullup
   pinMode(3, INPUT);
   digitalWrite(3, HIGH);  //internal pullup
-  pinMode(4, INPUT);
-  digitalWrite(4, HIGH);  //internal pullup
+  pinMode(0, INPUT);
+  digitalWrite(0, HIGH);  //internal pullup
+  
+  pinMode(4, OUTPUT);
+  digitalWrite(4, LOW);
 
 }
 
