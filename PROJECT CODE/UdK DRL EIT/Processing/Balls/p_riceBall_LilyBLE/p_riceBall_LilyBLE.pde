@@ -38,7 +38,7 @@ void setup () {
   println(Serial.list());
   //String portName = Serial.list()[5];
   //myPort = new Serial(this, "COM13", 9600);  //USB
-  myPort = new Serial(this, "COM13", 57600);  //Bluetooth module
+  myPort = new Serial(this, "COM18", 57600);  //Bluetooth module
   myPort.clear();
   myPort.bufferUntil('\n');
   myFont = createFont(PFont.list()[0], 36);
