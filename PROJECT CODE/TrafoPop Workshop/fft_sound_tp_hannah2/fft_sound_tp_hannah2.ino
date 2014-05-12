@@ -22,24 +22,33 @@ int moo=0;
 int audio_in=3;
 int circleSpeed = 35;
 
+int pushes;
+boolean buttonPressed=false;
+const int buttonPin = 6;     // the number of the pushbutton pin
+const int buttonGNDpin = 5;
+const int potGNDpin = 14;
+const int potVCCpin = 16;
+const int potPin = A1;
 
 struct color colorOFF = { 
-  1,1,1 };
-
+  0,0,0 };
 struct color colorON = { 
   255, 255, 255 };
 
 struct color colorRed = { 
   255, 1, 1 };
-
+struct color colorOrange = { 
+  250, 170, 1 };
 struct color colorYellow = { 
   255, 255, 1 };
 
+struct color colorBlue = { 
+  1, 70, 250 };
 struct color colorTurquoise = { 
   1, 255, 255 };
-
 struct color colorPurple = { 
   255, 1, 255 };
+
 struct color myColor = { 
   200,0,0 };
 
@@ -53,13 +62,24 @@ void setup()
   // SPI.setClockDivider(SPI_CLOCK_DIV16);  // 1 MHz
   SPI.setClockDivider(SPI_CLOCK_DIV8);  // 2 MHz
 
+  pinMode(buttonGNDpin, OUTPUT);
+  digitalWrite(buttonGNDpin, LOW);
+  pinMode(buttonPin, INPUT_PULLUP);
+
+pinMode(potGNDpin, OUTPUT);
+digitalWrite(potGNDpin, LOW);
+pinMode(potVCCpin, OUTPUT);
+digitalWrite(potVCCpin, HIGH);
+pinMode(potPin, INPUT);
 
   Serial.begin(115200);
+
+  //animateCircle();
 }
 
 
 
-
+int readingPot;
 
 
 
@@ -88,7 +108,7 @@ void loop()
     for (i=0; i< 64;i++)
     {
       data[i] = sqrt(data[i] * data[i] + im[i] * im[i]); 
-    }
+    } 
 
     struct color color2 =
     {
@@ -102,11 +122,27 @@ void loop()
     // in this case, the data is used from slots of 0 -> 60.
     // first led is lit by values from 0-2, second with values from 3-5, etc.
 
+    int reading = digitalRead(buttonPin);
+    readingPot = analogRead(potPin);
+    
+    readingPot = int(map(readingPot, 0, 1023, 0, 9));
+    Serial.println(readingPot);
+    if (reading == 0 && buttonPressed == false) {
+      buttonPressed = true;
+      pushes++;
+    }
 
-    //graphWithColor();
-    graphwithPosition();  
-    //animateCircle();
+    if(reading == 1) buttonPressed = false;
+    if(pushes == 6) pushes = 0;
+    //Serial.println(pushes);
 
+    if(pushes == 0) graphSoundWithColors();
+    if(pushes == 1) animateCircle(pushes);
+    if(pushes == 2) animateCircle(pushes);
+    if(pushes == 3) animateCircle(pushes);
+    if(pushes == 4) animateCircle(pushes);
+    if(pushes == 5) animateCircle(pushes);
+    //graphSoundWithPosition(); 
     show2((byte *)pixels, sizeof(pixels));
 
   }
@@ -129,11 +165,15 @@ void show2(byte *bytes, int size)
   for (int index=0; index<size; index++)
   {
     // nur 25% Helligkeit    
-    byte c = bytes[index] >> 2;
+    byte c = bytes[index] >> readingPot;
 
     for (SPDR = c; !(SPSR & _BV(SPIF)););
   }
 }
+
+
+
+
 
 
 

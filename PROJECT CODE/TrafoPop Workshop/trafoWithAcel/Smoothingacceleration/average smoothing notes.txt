@@ -1,0 +1,35 @@
+int valuestorage01 = 1;
+int valuestorage02 = 1;
+int valuestorage03 = 1;
+int valuestorage04 = 1;
+int valuestorage05 = 1;
+int valuestorage06 = 1;
+int valuestorage07 = 1;
+int valuestorage08 = 1;
+int loopzaehler =1;
+imt new average
+int old_average
+derzeitigerinput = read A0
+
+void loop ()
+
+
+new_average = old_average;
+
+valuestorage0("loopzaehler") = A0;
+
+new_average = valuestorage01 + valuestorage02 + valuestorage03 + valuestorage04 + valuestorage05 + valuestorage06 + valuestorage07 + valuestorage08;
+
+acceleration = new_average - old_average
+
+print acceleration
+
+if loopzaehler < 8
+  loopzaehler += 1;
+  else
+  loopzaehler = 1
+  
+  
+  
+
+
