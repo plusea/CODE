@@ -29,8 +29,9 @@ void setup() {
 
   // initialise GloveData object
   gloves = new GlovesData();
-  println(Serial.list());
-  String portName = Serial.list()[0];
+  //println(Serial.list());
+  printArray(Serial.list());
+  String portName = Serial.list()[11];
   //myPort = new Serial(this, portName, 115200);
 
   //noStroke();

@@ -9,7 +9,7 @@ Code based on Tom Igoe's Serial Graphing Sketch
 
 import processing.serial.*;
 
-int maxNumberOfSensors = 1;       // Arduino has 6 analog inputs, so I chose 6
+int maxNumberOfSensors = 2;       // Arduino has 6 analog inputs, so I chose 6
 boolean fontInitialized = false;  // whether the font's been initialized
 Serial myPort;                    // The serial port
 
@@ -21,17 +21,18 @@ void setup () {
   // set up the window to whatever size you want:
   size(1000, 700);        
   // List all the available serial ports:
-  println(Serial.list());
+  //println(Serial.list());
+  printArray(Serial.list());
   // I know that the first port in the serial list on my mac
   // is always my  Arduino or Wiring module, so I open Serial.list()[0].
   // Open whatever port is the one you're using.
-  String portName = Serial.list()[0];
+  String portName = Serial.list()[17];
   myPort = new Serial(this, portName, 9600);
   myPort.clear();
   // don't generate a serialEvent() until you get a newline (\n) byte:
   myPort.bufferUntil('\n');
   // create a font with the fourth font available to the system:
-  myFont = createFont(PFont.list()[3], 14);
+  myFont = createFont(PFont.list()[0], 14);
   textFont(myFont);
   fontInitialized = true;
   // set inital background:
@@ -55,7 +56,7 @@ void serialEvent (Serial myPort) {
     inString = trim(inString);
 
     // convert to an array of ints:
-    int incomingValues[] = int(split(inString, ","));
+    int incomingValues[] = int(split(inString, ", "));
 
     // print out the values
     //  print("length: " + incomingValues.length + " values.\t");
@@ -94,16 +95,14 @@ void serialEvent (Serial myPort) {
         //stroke(0);
         if (ypos > 512)
         {
-      //    stroke(color(ypos/4,0,0));
+          //    stroke(color(ypos/4,0,0));
           stroke(#ff0000);
-        }
-        
-                else
+        } else
         {
           stroke(0);
         }
-        
-                line(xpos, height /*height-previousValue[i]*/, xpos /*+1*/, height-ypos);
+        xpos=map(xpos, 1023, 500, 0, 1023);
+        line(xpos, height /*height-previousValue[i]*/, xpos /*+1*/, height-ypos);
         // save the current value to be the next time's previous value:
         previousValue[i] = ypos;
       }
@@ -114,19 +113,17 @@ void serialEvent (Serial myPort) {
       //saveFrame();
       xpos = 0;
       background(255);
-    } 
-    else
+    } else
     {
-      xpos+=.25;
+      xpos+=1;
     }
   }
 }
 
-void keyPressed(){
+void keyPressed() {
   if (key==' ')
     saveFrame();
 }
-
 
 
 

@@ -32,7 +32,8 @@ void setup() {
   gloves = new GlovesData();
 
   // Serial stuff:
-  println(Serial.list());
+  //println(Serial.list());
+  printArray(Serial.list());
   String portName = Serial.list()[0];
   //myPort = new Serial(this, portName, 115200);
 
