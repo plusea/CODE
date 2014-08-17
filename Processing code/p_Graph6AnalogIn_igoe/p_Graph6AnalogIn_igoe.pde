@@ -26,7 +26,7 @@ void setup () {
   // I know that the first port in the serial list on my mac
   // is always my  Arduino or Wiring module, so I open Serial.list()[0].
   // Open whatever port is the one you're using.
-  String portName = Serial.list()[17];
+  String portName = Serial.list()[9];
   myPort = new Serial(this, portName, 9600);
   myPort.clear();
   // don't generate a serialEvent() until you get a newline (\n) byte:
@@ -56,10 +56,14 @@ void serialEvent (Serial myPort) {
     inString = trim(inString);
 
     // convert to an array of ints:
-    int incomingValues[] = int(split(inString, ", "));
-
-    // print out the values
-    //  print("length: " + incomingValues.length + " values.\t");
+    int incomingValues[] = int(split(inString, ","));
+ 
+    //test print values:
+    //print("length: " + incomingValues.length + " values.\t");
+    print(incomingValues[0]);
+    print('\t');
+    println(incomingValues[1]);
+    
     if (incomingValues.length <= maxNumberOfSensors && incomingValues.length > 0) {
       for (int i = 0; i < incomingValues.length; i++) {
 
@@ -74,7 +78,7 @@ void serialEvent (Serial myPort) {
         // make a black block to erase the previous text:
         noStroke();
         fill(255);
-        //rect(10, graphBottom+1, 110, 20);
+        rect(10, graphBottom+1, 110, 20);
 
         // print the sensor numbers to the screen:
         fill(0);
@@ -84,24 +88,13 @@ void serialEvent (Serial myPort) {
         // you text():
         if (fontInitialized) 
         {
-          //text("Sensor " + i + ":" + incomingValues[i], 10, textPos);
+          text("Sensor " + i + ":" + incomingValues[i], 10, textPos);
         }
 
-        //stroke(127);
-        smooth();
-        strokeWeight(1);
-        // change colors to draw the graph line:
-        //stroke(64*i, 32*i, 255);
-        //stroke(0);
-        if (ypos > 512)
-        {
-          //    stroke(color(ypos/4,0,0));
-          stroke(#ff0000);
-        } else
-        {
-          stroke(0);
-        }
-        xpos=map(xpos, 1023, 500, 0, 1023);
+        stroke(0);
+        strokeWeight(10);
+
+        xpos=map(xpos, 1023, 0, 0, 1023);
         line(xpos, height /*height-previousValue[i]*/, xpos /*+1*/, height-ypos);
         // save the current value to be the next time's previous value:
         previousValue[i] = ypos;
@@ -124,6 +117,4 @@ void keyPressed() {
   if (key==' ')
     saveFrame();
 }
-
-
 

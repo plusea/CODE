@@ -59,34 +59,37 @@ struct color colorRed = {
 
 struct color colorYellow = { 
   255, 255, 1 };
-  
-  struct color colorTurquoise = { 
+
+struct color colorTurquoise = { 
   1, 255, 255 };
-  
-  struct color colorPurple = { 
+
+struct color colorPurple = { 
   255, 1, 255 };
-  
-  struct color myColor = { 
+
+struct color myColor = { 
   200,0,0 };
 
+struct color randomColor = { 
+  random(1,255), random(1,255), random(1,255)
+  };
 
-void setup() {
-  SPI.begin();
-  SPI.setBitOrder(MSBFIRST);
-  SPI.setDataMode(SPI_MODE0);
-  SPI.setClockDivider(SPI_CLOCK_DIV16);  // 1 MHz
-  //SPI.setClockDivider(SPI_CLOCK_DIV8);  // 2 MHz
-  // SPI.setClockDivider(SPI_CLOCK_DIV4);  // 4 MHz 
+  void setup() {
+    SPI.begin();
+    SPI.setBitOrder(MSBFIRST);
+    SPI.setDataMode(SPI_MODE0);
+    SPI.setClockDivider(SPI_CLOCK_DIV16);  // 1 MHz
+    //SPI.setClockDivider(SPI_CLOCK_DIV8);  // 2 MHz
+    // SPI.setClockDivider(SPI_CLOCK_DIV4);  // 4 MHz 
 
-  pinMode(14, OUTPUT);
-  pinMode(16, OUTPUT);
-  pinMode(A1, INPUT_PULLUP);
-  digitalWrite(14, LOW);
-  digitalWrite(16, HIGH);
-  Serial.begin(9600);
-  
-  for(int i=0; i<20; i++) blinkAll();
-}
+    pinMode(14, OUTPUT);
+    pinMode(16, OUTPUT);
+    pinMode(A1, INPUT_PULLUP);
+    digitalWrite(14, LOW);
+    digitalWrite(16, HIGH);
+    Serial.begin(9600);
+
+    //for(int i=0; i<20; i++) blinkAll();
+  }
 
 
 
@@ -108,6 +111,9 @@ void show(byte *bytes, int size) {
     for (SPDR = c; !(SPSR & _BV(SPIF)););
   }
 }
+
+
+
 
 
 
