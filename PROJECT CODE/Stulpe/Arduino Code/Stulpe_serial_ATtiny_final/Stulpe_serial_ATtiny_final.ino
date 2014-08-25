@@ -27,8 +27,8 @@ int sensor1BottomPin = 2; //ADC1
 int sensor2TopPin = 3; //ADC3
 
 //// variables to be changed: /////
-int threshold1 = 400;
-int threshold2 = 200;
+int thresholdTOP = 400;  // yellow(1) = 100 // orange(2) = 300
+int thresholdBOTTOM = 100;  // yellow(1) = 400 // orange(2) = 350
 int triggerTime = 200; // NOT in millis() but it count cycles!
 //////////////////////////////////
 
@@ -68,17 +68,17 @@ void loop() {
   delay(10);
 
   // if just TOP sensor triggered:
-  if(sensorValue1Bottom > threshold1 && sensorValue2Top < threshold2) {
+  if(sensorValue1Bottom > thresholdBOTTOM && sensorValue2Top < thresholdTOP) {
     stateValue = 1;
-    blinkLED(500);
+    blinkLED(500);  // blink slow
   }
     // if just BOTTOM sensor triggered:
-  else if(sensorValue1Bottom < threshold1 && sensorValue2Top > threshold2) {
+  else if(sensorValue1Bottom < thresholdBOTTOM && sensorValue2Top > thresholdTOP) {
     stateValue = 2;
-    blinkLED(200);
+    blinkLED(200);  // blink fast
   }
   // if BOTH sensors triggered:
-  else if(sensorValue1Bottom < threshold1 && sensorValue2Top < threshold2) {
+  else if(sensorValue1Bottom < thresholdBOTTOM && sensorValue2Top < thresholdTOP) {
     stateValue = 3;
     digitalWrite(ledPin, LOW); // turn LED on
     timeCount++; // keep track of activation time
