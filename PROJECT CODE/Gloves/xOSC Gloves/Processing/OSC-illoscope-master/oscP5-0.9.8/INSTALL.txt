@@ -1,0 +1,29 @@
+Find instructions on how to install library oscP5 below.
+
+
+Where do I find my Processing sketchbook folder?
+You can find the location of your sketchbook in the 
+Preferences menu item inside your Processing application.
+By default the following locations are used:
+for mac users the sketchbook folder is located inside ~/Documents/Processing. 
+for windows users the sketchbook folder is located 
+inside folder 'My Documents'/Processing
+
+in the following folder structure, Processing refers to your 
+sketchbook folder. Put library oscP5 into the 'libraries' folder 
+inside your sketchbook folder. 
+if folder 'libraries does not exist, create it.
+
+Processing
+  libraries
+    oscP5
+      examples
+      library
+        oscP5.jar
+      reference
+      src
+                      
+                      
+after library oscP5 has been successfully installed, restart processing.
+                      
+                      
