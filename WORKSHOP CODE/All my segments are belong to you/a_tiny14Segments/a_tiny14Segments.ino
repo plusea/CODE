@@ -36,6 +36,51 @@ int C_segments[]={
   4,15,3,18,12};
 int D_segments[]={
   4,3,18,8,13};
+int E_segments[]={
+  6,15,3,18,12,1,5};
+int F_segments[]={
+  5,3,18,12,1,5};
+int G_segments[]={
+  6,5,6,15,3,18,12};
+int H_segments[]={
+  6,3,18,1,5,9,6};
+int I_segments[]={
+  4,12,19,11,15};
+int J_segments[]={
+  4,3,9,6,15};
+int K_segments[]={
+  6,3,18,1,2,10};
+int L_segments[]={
+  3,15,3,18};
+int M_segments[]={
+  6,3,18,8,2,9,6};
+int N_segments[]={
+  6,3,18,8,10,6,9};
+int O_segments[]={
+  6,3,18,12,9,6,15};
+int P_segments[]={
+  6,3,18,12,9,5,1};
+int Q_segments[]={
+  7,3,18,12,9,6,15,10};
+int R_segments[]={
+  7,3,18,12,9,5,1,10};
+int S_segments[]={
+  6,12,18,1,5,6,15};
+int T_segments[]={
+  3,12,19,11};
+int U_segments[]={
+  5,18,3,15,6,9};
+int V_segments[]={
+  4,18,3,13,2};
+int W_segments[]={
+  6,18,3,13,10,6,9};
+int X_segments[]={
+  4,8,10,2,13};
+int Y_segments[]={
+3,8,2,11};
+int Z_segments[]={
+4,12,2,13,15};
+
 
 int pause = 1;
 int numberOfPins = 5;
@@ -50,12 +95,17 @@ void setup(){
 
 
 void loop(){
+  // TESTS:
+  //testAll20LEDs();
   //testAll14LEDs();
-  displayAlphabet(1, 100);
-  displayAlphabet(2, 100);
-  displayAlphabet(3, 100);
-  displayAlphabet(4, 100);
-  //displaySegment(13);
+
+  // Display A, B, C....:
+  for (int i=1;i<=26;i++) {
+    displayAlphabet(i, 200);
+  }
+
+  // displaySegment(13);
+
   //  translateAlphabet('A');
   //  delay(1000);
   //    translateAlphabet('B');
@@ -76,6 +126,14 @@ void testAll14LEDs(){
 }
 
 
+void testAll20LEDs(){
+  for (int i=1;i<=20;i++) {
+    displaySegment(i);
+    delay(3000);
+  }
+}
+
+
 
 
 
@@ -84,6 +142,8 @@ void translateAlphabet(char myABC){
   if(myABC == 'A') displayAlphabet(1, 1000);
   if(myABC == 'B') displayAlphabet(2, 1000);
   if(myABC == 'C') displayAlphabet(3, 1000);
+  if(myABC == 'D') displayAlphabet(4, 1000);
+  if(myABC == 'E') displayAlphabet(5, 1000);
 
 }
 
@@ -100,6 +160,9 @@ void spwm(int freq,int spin,int sp){
   digitalWrite(spin,LOW);
   delayMicroseconds(sp*(255-freq));
 } //spwm
+
+
+
 
 
 
