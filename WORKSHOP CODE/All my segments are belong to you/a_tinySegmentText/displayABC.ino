@@ -1,8 +1,8 @@
-void displayAlphabet(int myNumber, int myTime){
-  switch(myNumber){
+void displayAlphabet(char myABC, int myTime){
+  switch(myABC){
 
     // A
-  case 1:
+  case 'A':
     for (int i=0;i<myTime;i++) {
       for (int j=1;j<A_segments[0]+1;j++) {
         displaySegment(A_segments[j]);

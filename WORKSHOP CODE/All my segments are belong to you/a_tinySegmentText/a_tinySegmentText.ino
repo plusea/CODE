@@ -7,13 +7,13 @@
  segments of LED lights
  
  
-   ATtiny45/85:
-       ____
-  RST -|  |- VCC
+ ATtiny45/85:
+ ____
+ RST -|  |- VCC
  Pin3 -|  |- Pin2
  Pin4 -|  |- Pin1
-  GND -|  |- Pin0
-       ____
+ GND -|  |- Pin0
+ ____
  
  
  displaySegmenting Segments:
@@ -88,6 +88,10 @@ int Y_segments[]={
 int Z_segments[]={
   4,12,2,13,15};
 
+char ABCarray[26]={
+  'A','B','C','D','E','F','G','H','I','J','K','L','M',
+  'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+
 int pause = 1;  // pause very very briefly after displaying each segment
 int numberOfPins = 5;
 
@@ -101,16 +105,19 @@ void setup(){
 
 
 void loop(){
+  char letter = 'A';
+  displayAlphabet(letter, 200);
   // TESTS:
   //testAll20LEDs();
   //testAll14LEDs();
   // displaySegment(13);
 
   // Display A, B, C....:
-  for (int i=1;i<=26;i++) {
-    displayAlphabet(i, 200);
-  }
+  //  for (int i=1;i<=26;i++) {
+  //    displayAlphabet(i, 200);
+  //  }
 }
+
 
 
 
@@ -128,3 +135,5 @@ void testAll20LEDs(){
     delay(500);
   }
 }
+
+
