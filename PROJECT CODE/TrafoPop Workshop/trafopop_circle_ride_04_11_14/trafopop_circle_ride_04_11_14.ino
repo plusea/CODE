@@ -32,6 +32,7 @@ long framecount = 0;
 int fadeCount = 0;
 int fadeAmount = 1;
 int sensorValue;
+int pressureValue;
 float red;
 float green;
 float blue;
@@ -81,11 +82,16 @@ struct color randomColor = {
     //SPI.setClockDivider(SPI_CLOCK_DIV8);  // 2 MHz
     // SPI.setClockDivider(SPI_CLOCK_DIV4);  // 4 MHz 
 
+  // potentiometer pins:
     pinMode(14, OUTPUT);
     pinMode(16, OUTPUT);
     pinMode(A1, INPUT_PULLUP);
     digitalWrite(14, LOW);
     digitalWrite(16, HIGH);
+    
+ // pressure sensor pin:
+ pinMode(A3, INPUT_PULLUP);
+ 
     Serial.begin(9600);
 
     //for(int i=0; i<20; i++) blinkAll();
@@ -96,7 +102,8 @@ struct color randomColor = {
 void loop() {
   //allON();
   //drawCircle();  // call drawCircle function
-  animateCircle();
+  //animateCircle();
+  pressureCircle();
   //blinkAll();
 }
 
