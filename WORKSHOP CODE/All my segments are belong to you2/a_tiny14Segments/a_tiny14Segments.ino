@@ -6,11 +6,15 @@
  Code for ATtiny that controls 14 individual
  segments of LED lights
  
- ATtiny45/85:
- RST -|  |- VCC
+ 
+   ATtiny45/85:
+       ____
+  RST -|  |- VCC
  Pin3 -|  |- Pin2
  Pin4 -|  |- Pin1
- GND -|  |- Pin0
+  GND -|  |- Pin0
+       ____
+ 
  
  displaySegmenting Segments:
  +/-  0    1    2     3    4
@@ -21,13 +25,16 @@
  5   s17 s18  s19   s20   X
  */
 
+
 // define ATtiny pins that will be used for displaySegmenting:
 int led[]={
   0,1,2,3,4};
 
+// for testing purposes, list all segments used in design:
 int used14Segments[]={
   1,2,3,5,6,8,9,10,11,12,15,13,18,19};
 
+// define which segments are used in which letters of the ABC:
 int A_segments[]={
   7,3,18,12,9,6,1,5};
 int B_segments[]={
@@ -77,16 +84,23 @@ int W_segments[]={
 int X_segments[]={
   4,8,10,2,13};
 int Y_segments[]={
+<<<<<<< HEAD
 3,8,2,11};
 int Z_segments[]={
 4,12,2,13,15};
 
 
 int pause = 1;
+=======
+  3,8,2,11};
+int Z_segments[]={
+  4,12,2,13,15};
+
+int pause = 1;  // pause very very briefly after displaying each segment
+>>>>>>> d66945ce18a21ba51ebd72d226cb912246dfe248
 int numberOfPins = 5;
-int delayTime = 12;
-int testDelay = 250;
-int charliePin;
+
+
 
 void setup(){
   for(int z=0;z<numberOfPins;z++) pinMode(led[z], OUTPUT);
@@ -94,15 +108,21 @@ void setup(){
 }
 
 
+
 void loop(){
   // TESTS:
   //testAll20LEDs();
   //testAll14LEDs();
+<<<<<<< HEAD
+=======
+  // displaySegment(13);
+>>>>>>> d66945ce18a21ba51ebd72d226cb912246dfe248
 
   // Display A, B, C....:
   for (int i=1;i<=26;i++) {
     displayAlphabet(i, 200);
   }
+<<<<<<< HEAD
 
   // displaySegment(13);
 
@@ -114,6 +134,8 @@ void loop(){
   //    for (int i=0;i<100;i++) {
   //  displayAlphabet(4);
   //    }
+=======
+>>>>>>> d66945ce18a21ba51ebd72d226cb912246dfe248
 }
 
 
@@ -134,6 +156,7 @@ void testAll20LEDs(){
 }
 
 
+<<<<<<< HEAD
 
 
 
@@ -187,3 +210,11 @@ void spwm(int freq,int spin,int sp){
 
 
 
+=======
+void testAll20LEDs(){
+  for (int i=1;i<=20;i++) {
+    displaySegment(i);
+    delay(500);
+  }
+}
+>>>>>>> d66945ce18a21ba51ebd72d226cb912246dfe248

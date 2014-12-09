@@ -1,0 +1,25 @@
+#######################################
+# Syntax Coloring Map For Charlieplex
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Charlieplex	KEYWORD1
+charliePin	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setVcc	KEYWORD2
+setGnd	KEYWORD2
+clear	KEYWORD2
+charlieWrite	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+MAX_DATA_BYTES	LITERAL1

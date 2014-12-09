@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GLOVERMODEL version="0.1.9" GlobalMute="0">
+  <SIDEBAR CurrentSelectedTab="1"/>
+  <ARRANGEMENTLIST CurrentArrangement="0">
+    <ARRANGEMENT NumScenes="1" Name="New Arrangement" CurrentScene="0" SoloCount="0"
+                 AssociatedProjectFileList="">
+      <SCENE Title="Puppeteer" IsGlobal="0" IgnoreGlobalScenes="0">
+        <MAPPINGINPUTLIST>
+          <MAPPINGINPUT InputMin="0" InputMax="1" OutputMin="0" OutputMax="127" WarpFactor="0"
+                        OutputValue="1" AltOutputValue="0" ToggleMode="0" UniqueId="1415307591014"
+                        Name="Left Roll" Type="1">
+            <INPUTCOMBINATION>
+              <INPUTIDENTIFIER DeviceIndex="0" DeviceId="LEFT ArduIMU Glove" DeviceName="LEFT ArduIMU Glove"
+                               InputSetIndex="1" InputSetId="Orientation" InputSetName="Orientation"
+                               InputIndex="1" InputId="Roll" InputName="Roll" InputType="3"/>
+            </INPUTCOMBINATION>
+          </MAPPINGINPUT>
+          <MAPPINGINPUT InputMin="0" InputMax="1" OutputMin="0" OutputMax="127" WarpFactor="0"
+                        OutputValue="1" AltOutputValue="0" ToggleMode="0" UniqueId="1415367004989"
+                        Name="Left Upper-Index Flex" Type="1">
+            <INPUTCOMBINATION>
+              <INPUTIDENTIFIER DeviceIndex="0" DeviceId="LEFT ArduIMU Glove" DeviceName="LEFT ArduIMU Glove"
+                               InputSetIndex="0" InputSetId="Flex" InputSetName="Flex" InputIndex="2"
+                               InputId="IndexUpper" InputName="IndexUpper" InputType="3"/>
+            </INPUTCOMBINATION>
+          </MAPPINGINPUT>
+          <MAPPINGINPUT InputMin="0" InputMax="1" OutputMin="0" OutputMax="127" WarpFactor="0"
+                        OutputValue="1" AltOutputValue="0" ToggleMode="0" UniqueId="1415374994344"
+                        Name="Left Fist -&gt; Yaw" Type="1">
+            <INPUTCOMBINATION>
+              <INPUTIDENTIFIER DeviceIndex="0" DeviceId="LEFT ArduIMU Glove" DeviceName="LEFT ArduIMU Glove"
+                               InputSetIndex="1" InputSetId="Orientation" InputSetName="Orientation"
+                               InputIndex="2" InputId="Yaw" InputName="Yaw" InputType="3"/>
+              <INPUTIDENTIFIER DeviceIndex="0" DeviceId="LEFT ArduIMU Glove" DeviceName="LEFT ArduIMU Glove"
+                               InputSetIndex="2" InputSetId="Posture" InputSetName="Posture"
+                               InputIndex="0" InputId="Posture1" InputName="Posture1" InputType="2"/>
+            </INPUTCOMBINATION>
+          </MAPPINGINPUT>
+        </MAPPINGINPUTLIST>
+        <MAPPINGOUTPUTLIST>
+          <MAPPINGOUTPUT OutputFormat="1" Mute="0" Solo="0" Name="New Mapping Output"
+                         UniqueId="1415307646884" Initialiser="0" ExitMessage="0" OutputValue="1">
+            <MIDIOUTPUT MessageType="3" Channel="1" MIDINumber="60"/>
+            <OSCOUTPUT AddressPattern="/LeftFistRoll" IPAddress="127.0.0.1" SendPort="9000"/>
+            <SCENESWITCHOUTPUT SceneToSwitchTo="1"/>
+            <DEVICEFEEDBACKOUTPUT DeviceIndex="-1" DeviceIdentifier="NULL" OutputIndex="-1" OutputIdentifier="NULL"
+                                  OutputValue="-1"/>
+          </MAPPINGOUTPUT>
+          <MAPPINGOUTPUT OutputFormat="1" Mute="0" Solo="0" Name="New Mapping Output"
+                         UniqueId="1415367689136" Initialiser="0" ExitMessage="0" OutputValue="1">
+            <MIDIOUTPUT MessageType="3" Channel="1" MIDINumber="60"/>
+            <OSCOUTPUT AddressPattern="/LeftIndexFlex" IPAddress="127.0.0.1" SendPort="9000"/>
+            <SCENESWITCHOUTPUT SceneToSwitchTo="1"/>
+            <DEVICEFEEDBACKOUTPUT DeviceIndex="-1" DeviceIdentifier="NULL" OutputIndex="-1" OutputIdentifier="NULL"
+                                  OutputValue="-1"/>
+          </MAPPINGOUTPUT>
+          <MAPPINGOUTPUT OutputFormat="1" Mute="0" Solo="0" Name="New Mapping Output"
+                         UniqueId="1415375066566" Initialiser="0" ExitMessage="0" OutputValue="1">
+            <MIDIOUTPUT MessageType="3" Channel="1" MIDINumber="60"/>
+            <OSCOUTPUT AddressPattern="/LeftFistYaw" IPAddress="127.0.0.1" SendPort="9000"/>
+            <SCENESWITCHOUTPUT SceneToSwitchTo="1"/>
+            <DEVICEFEEDBACKOUTPUT DeviceIndex="-1" DeviceIdentifier="NULL" OutputIndex="-1" OutputIdentifier="NULL"
+                                  OutputValue="-1"/>
+          </MAPPINGOUTPUT>
+        </MAPPINGOUTPUTLIST>
+        <CONNECTEDNODELIST>
+          <CONNECTEDNODE MappingInputUniqueId="1415307591014" MappingOutputUniqueId="1415307646884"
+                         MappingInputPortNumber="0"/>
+          <CONNECTEDNODE MappingInputUniqueId="1415367004989" MappingOutputUniqueId="1415367689136"
+                         MappingInputPortNumber="0"/>
+          <CONNECTEDNODE MappingInputUniqueId="1415374994344" MappingOutputUniqueId="1415375066566"
+                         MappingInputPortNumber="0"/>
+        </CONNECTEDNODELIST>
+        <INSTRUMENTLIST/>
+      </SCENE>
+    </ARRANGEMENT>
+  </ARRANGEMENTLIST>
+  <DEVICEMANGER NumDevices="2" CurrentDevice="0" DeviceName="LEFT ArduIMU Glove">
+    <DEVICE DeviceType="1" DeviceId="ArduIMUGlove" DeviceName="LEFT ArduIMU Glove">
+      <SETTINGS Connected="1" BluetoothDevice="/dev/cu.RN42-45ED-SPP" Hand="0"
+                base64:CalibrationData="72.Brxw9DtdT5SNzhnOhAAl9vf.q3S1NeeO678a+3jX.9Cov0yOjsye+b99o8iPfUzOeNY5+vdgy9idNc.Ptsss+HhVq9iSrS7O"
+                base64:PostureData="9626.NUVcxEFaNUFc28lbqMUZsAGakoicwn.akElbtIUXzUlNf.iKxTCLv.CLfD1XzYTctM1SlY1bkQmNf.iKvDCLv.CLJvTX4UlbyoCHf.xLJvTX4Ulbf.BHf.iNf.BH1n.SgkWYxABHf.RL5.BHwLiBLEVdkIGHf.BHxnCHfDiLJ.BHf.CHf.BHv.BHfzRLf.BHw3xM2.iMxTSLwPCMz.SNwfCLJ.BHf.CHf.BHv.BHf.BLf.BHsDiKvPiLxXiM4XCM4DiLzDCM1n.Hf.BLf.BHf.CHf.BHw.BHfPiK4.CM2HSL2LiM4.yM4TSNvn.Hf.BLf.BHf.CHf.BHx.BHfHiK3TSM2fiMyHyL0PyMyXyLyn.Hf.BLf.BHf.CHf.BHy.BHfzBLtHiM2TCN0HyM2TSM2LyMy.iBf.BHv.BHf.BLf.BHfPCHf.RKx3RLxDiL0.yL4DCLvXCM1jyMJ.BHf.CHf.BHv.BHf.RMf.BHsPiKvPCM0TiL3.yLvLSN0TCL3n.Hf.BLf.BHfDCHf.RKw.BHfzBLtTCL0.CN3jiL0LiMwXyLyLiBf.BHv.BHf.RLf.BHf.CHf.RKw3xLxLCL2TiL4PCM4PiMxfSNJ.BHf.CHf.BHw.BHf.RLf.BHw3hM2DCLvXiLvHiM4byM0LSNJ.BHf.CHf.BHw.BHf.hLf.BHs.iKwPCMwjSNvbyLyDCM1XiM2n.Hf.BLf.BHfDCHf.BHy.BHfHiKx.iM0XyLxLCMyHSNxHyL1n.Hf.BLf.BHfDCHf.BHz.BHfPiK1LCMyfyLx.SL0jSNwHSLwn.Hf.BLf.BHfDCHf.BH0.BHfzxLtHiLvbCN2TiL0DyM2.CLx.iBf.BHv.BHf.hLf.BHsDCHf.RKv3xL0DSNzbCNwPiLxXSL0.SMJ.BHf.CHf.BHx.BHf.BLf.BHw3BLwjyMybiLzLiM0HyLzLCNJ.BHf.CHf.BHx.BHf.RLf.BHv3xL1TSMwTSM3jyMwPCL0.yLJ.BHf.CHf.BHx.BHf.hLf.BHv3RLzbSLyPiMwXSN2DCLwTSNJ.BHf.CHf.BHx.BHf.xLf.BHs.iK1XiM0XiM2fSNwTCLxLCNvn.Hf.BLf.BHfHCHf.BHz.BHf.iK0LCLvPiMzXyLvDiL1jSMyn.Hf.BLf.BHfHCHf.BH0.BHfHiKzHyM2HSL4byMxLyL3fiM2n.Hf.BLf.BHfLCHf.RKw.BHf.iK2PCL3DSM1LSNzjSM3PSN1n.Hf.BLf.BHfLCHf.BHv.BHfzBLtLSL0DiLvTCM3.CL4fyMxPiBf.BHv.BHf.xLf.BHfDCHf.BMtDiM2XiM4byMyDCLwfCL1XiBf.BHv.BHf.xLf.BHfHCHf.BLtTSN2TiLzbCLxTCM3jCNvbiBf.BHv.BHf.xLf.BHfLCHf.RKv3BM3DCNvLiL1fSL4PSL4fiMJ.BHf.CHf.BHy.BHf.BMf.BHsHiK3fCN1LSN1fCNzjSL3HSLyn.Hf.BLf.BHfLCHf.BH0.BHf.iKybyLwDSMwHiLyDCNxXyM3n.Hf.BLf.BHfPCHf.RKw.BHfzRLtDyM1XSMy.iL2TyLzPCNzjiBf.BHv.BHf.BMf.BHf.CHf.BLtPiMwbiLxDCL0bCMwTCLvjiBf.BHv.BHf.BMf.BHfDCHf.xLtLCM1.CN1HiMyXSM1XSL1HiBf.BHv.BHf.BMf.BHfHCHf.BLtTCNwDiL1jCN2jyLzDSLxTiBf.BHv.BHf.BMf.BHfLCHf.RKx3hMzTSN0jiMwTyMvbyL4bSMJ.BHf.CHf.BHz.BHf.BMf.BHs.iK2jCM4TiLwTCMwTSN0PSM4n.Hf.BLf.BHfPCHf.BH0.BHfHiKwPCLwLCMvjiMwPSM1HSN4n.Hf.BLf.BHfTCHf.RKw.BHfzRLtXCMyjyL4PSN0.CN1XiM4jiBf.BHv.BHf.RMf.BHf.CHf.RLtDSMzTSNzTCMvTSN1.CL3LiBf.BHv.BHf.RMf.BHfDCHf.RLtHCLyDCMxXCMxjyMzfSMyTiBf.BHv.BHf.RMf.BHfHCHf.BLtXSN2LSL2XCLvHSMvHCMzDiBf.BHv.BHf.RMf.BHfLCHf.RKw3RNyPSMyXCM0bCL1DyM1biMJ.BHf.CHf.BH0.BHf.BMf.BHx3xLz.iLwTiM3HSN3LyL4fCMJ.BHf.CHf.BH0.BHf.RMf.BHy3BLv.SMzPyLvjiMwXCL3fSNJ.BHf.CHf.BH1.BHfzRLf.BHw3xM2XyM1HSLxbCN2XiL3DyMJ.BHf.CHf.BH1.BHf.BLf.BHs.iK0HCNvPyM3.CLvXCMvfiM4n.Hf.BLf.BHfXCHf.BHw.BHfzxLtLCL2jyMyLCNzfSM2DyM2biBf.BHv.BHf.hMf.BHfHCHf.RKv3BN1bSNwHyL0HCL3TSLwLSMJ.BHf.CHf.BH1.BHf.xLf.BHy3BL3fiLzfSN1fSLxPyL3jiMJ.BHf.CHf.BH1.BHf.BMf.BHv3xL2jCNyPSM4HyLzHyL2XyMJ.BHf.CHf.BH1.BHf.RMf.BHsHiKxbCMv.SLwHSL0HCL4jiMwn.Hf.BLf.BHfbCHf.RKw.BHf.iK1PSLxDSL4fiM0PSL2PCNvn.Hf.BLf.BHfbCHf.BHv.BHfDiK0DSL4.CNvTCMyTSL3.iM1n.Hf.BLf.BHfbCHf.BHw.BHfzBMtLSM2PSL4.SLyjyM2.SMvfiBf.BHv.BHf.xMf.BHfHCHf.RKv3RMwbSN3jSN4LCL4TyL4bSNJ.BHf.CHf.BH2.BHf.xLf.BHs.iK4TCL1PSM4HyL1DCM0.iLvn.Hf.BLf.BHfbCHf.BHz.BHfzhLtLiL1HCN2.yLwDyMybCL1DiBf.BHv.BHf.xMf.BHfTCHf.xLtHCMxTyL3jiL3jCN0TSN0biBf.BHv.BHf.BNf.BHsDCHf.RKw3xLvDSMvLiM0fiL4PiM2byMJ.BHf.CHf.BH3.BHf.BLf.BHs.iKyHSLzbSM1HSMvLCNwPyMvn.Hf.BLf.BHffCHf.BHw.BHfDiKybSNvPSNzHCLyTiM2TCL0n.Hf.BLf.BHffCHf.BHx.BHf.iKvfCL2bCMxTSMvjiM4DiLzn.Hf.BLf.BHffCHf.BHy.BHf.iKxLyM0DyL1PiMzfyLzHSLyn.Hf.BLf.BHffCHf.BHz.BHfLiK3.CMxPSMzbSL4TCMyPSM2n.Hf.BLf.BHffCHf.BH0.BHfzBLtXyMwHyMw.iL1DyLzPSNw.iBf.BHv.BHf.RNf.BHsDCHf.RKv3hMwXSM4DiM4DSN2.CNxTiLJ.BHf.CHf.BH4.BHf.BLf.BHv3RN0HCL1HCM3biMvHiLyLSNJ.BHf.CHf.BH4.BHf.RLf.BHv3hMx.SM2XiLvHCN1jCMwTyLJ.BHf.CHf.BH4.BHf.hLf.BHv3xL2.SL1.yM3fiL4biM0LiLJ.BHf.CHf.BH4.BHf.xLf.BHs.iK4LCL3LyL3biMwLiL4XSMwn.Hf.BLf.BHfjCHf.BHz.BHfDiKyLSLwfSNxbCM2fyM4.iL3n.Hf.BLf.BHfjCHf.BH0.BHfDiK4PyL3jSNyjyLvfSL1XSMvn.Hf.BLf.BHw.CHf.RKw.BHf.iK1.CL4jCNwXyLxHyLxXiM1n.Hf.BLf.BHw.CHf.BHv.BHfzBLtTSNwLCN2.SNy.iM2DiM4HiBf.BHv.BHfDCLf.BHfDCHf.RKx3xMyPyM3jSLyLCL2DCN4jCMJ.BHf.CHf.RLv.BHf.hLf.BHsHiKvfCL1.iLwXSNvLiM3XSMxn.Hf.BLf.BHw.CHf.BHy.BHfPiKvHiMzbiLvjSL1bCM3.CM2n.Hf.BLf.BHw.CHf.BHz.BHfLiKvbCNxbSMzPiLwHyLzDyLwn.Hf.BLf.BHw.CHf.BH0.BHfzBLtbCMxXiL2HiMy.iM4DSMxfiBf.BHv.BHfDSLf.BHsDCHf.RLtfSL4HCM0PSM2XCM4HyLw.iBf.BHv.BHfDSLf.BHf.CHf.RLtPyL3HiMz.SLxLyL1byLw.iBf.BHv.BHfDSLf.BHfDCHf.RKw3xLyHSN4HCMyPSMvDiMzbSNJ.BHf.CHf.RLw.BHf.hLf.BHv3RM1HSN4DSNwbSLyLyLyDyLJ.BHf.CHf.RLw.BHf.xLf.BHsHiKzDiM4LyMyTSLxHiM3.iM1n.Hf.BLf.BHwDCHf.BHz.BHfzhMtjyL4DCM1jSN0TCMzPyLyXiBf.BHv.BHfDSLf.BHfTCHf.xLt.yL4bSM3PCMyfyLxLSN2TiBf.BHv.BHfDiLf.BHsDCHf.BLtLiLzfSNvXCMyLSM3HyLvXiBf.BHv.BHfDiLf.BHf.CHf.RKv3BN0TSMvPCLyTSNzjyMvbCLJ.BHf.CHf.RLx.BHf.RLf.BHx3hMxjSNyjSM0XSLxDCNxXiLJ.BHf.CHf.RLx.BHf.hLf.BHv3BN3XCLyHCLzPCN3bSMzHyMJ.BHf.CHf.RLx.BHf.xLf.BHv3BNxDCL2HSM2fCMy.SL2TCNJ.BHf.CHf.RLx.BHf.BMf.BHw3BNyDSM3LiL1DCM3jCN1fiLJ.BHf.CHf.RLx.BHf.RMf.BHsHiK1TSMxfSMwHCLvDCLybiMvn.Hf.RLf.BHf.CHf.RKw.BHfzhLtXCLzHiMxLSMwjCN4bCM1DiBf.BHw.BHf.BLf.BHf.CHf.BLtHSLzLSMvTiLwTiMzPCNyXiBf.BHw.BHf.BLf.BHfDCHf.hLtfiLzjSM4.yL4XCN3DSLvPiBf.BHw.BHf.BLf.BHfHCHf.RKv3xL0biLyTiMw.CM3TCL2XSNJ.BHfDCHf.BHv.BHf.xLf.BHw3xMz.yM2XyM2biL1bCM0XSLJ.BHfDCHf.BHv.BHf.BMf.BHx3BMxHiLyfyLzjSNwPSM0.CNJ.BHfDCHf.BHv.BHf.RMf.BHv3RNxHSMyXyL2LSLyfCMxbyMJ.BHfDCHf.BHv.BHf.hMf.BHsPiKyHyLwTiM3LyL1PCN1fSL1n.Hf.RLf.BHf.CHf.BH2.BHfzhMtPCM0TyM3TyM0DyLzHyM2LiBf.BHw.BHf.BLf.BHffCHf.RLtjiL3.SL2.iLvHiL0TiLzjiBf.BHw.BHf.BLf.BHfjCHf.BLt.CL3TiL1jyMwTiMyXSN1jiBf.BHw.BHf.BLf.BHw.CHf.RKv3RM4HSMwLyMz.CL1HyMwLiMJ.BHfDCHf.BHv.BHfDSLf.BHsXiKyTiM0biLwTSLwfCMvfiLvn.Hf.RLf.BHf.CHf.RLx.BHfDiKzXCLw.iM4XCN3bSN1jSN2n.Hf.RLf.BHfDCHf.RKw.BHfzRLtHSM0bSLz.SM3fyM1.yL2XiBf.BHw.BHf.RLf.BHf.CHf.hLtLiMwHCLv.SNzHiLy.iLxTiBf.BHw.BHf.RLf.BHfDCHf.RKy3hMxfCN4TiL3HyMzTyL1DyLJ.BHfDCHf.BHw.BHf.hLf.BHs.iK1PSM3HCLx.CLzPyLxXyM3n.Hf.RLf.BHfDCHf.BHy.BHfDiK0LiLzbiLxTiL3PSM2XCMxn.Hf.RLf.BHfDCHf.BHz.BHfLiKvDSN2bCN2HCNzfSMw.yMzn.Hf.RLf.BHfDCHf.BH0.BHfDiKvHiLyfSLzHCM4.yL3XSN1n.Hf.RLf.BHfDCHf.BH1.BHfzBMtbCMzfCMvXiLwjCM3HCMxHiBf.BHw.BHf.RLf.BHfbCHf.BLtHiMyDCN1XiMyLCN4HCL0jiBf.BHw.BHf.RLf.BHffCHf.RKw3hMwLiLvLyM1LSN1DyM4HCLJ.BHfDCHf.BHw.BHf.RNf.BHs.iKxXSM2DiMz.yL2HiL2XyLwn.Hf.RLf.BHfDCHf.RLv.BHfzxMt.SL2PSMvLyLxXCMwXCLwXiBf.BHw.BHf.RLf.BHwDCHf.BMt.yM4DSNyDSL0HyLzLyM0.iBf.BHw.BHf.RLf.BHwHCHf.RKw3RLyDyLwHSLyDCN3DyMwLSNJ.BHfDCHf.BHx.BHfzRLf.BHv3BM2PiLvDyL3DiLvXSMwHSMJ.BHfDCHf.BHx.BHf.BLf.BHy3xL3HiMzfyMvXCMyXSL0biLJ.BHfDCHf.BHx.BHf.RLf.BHw3BM0XyL0jSMvTiM0LyL3DyLJ.BHfDCHf.BHx.BHf.hLf.BHsLiKvLyL2LSLzXCL0bSLxfSNwn.Hf.RLf.BHfHCHf.BHy.BHfzRLtHiMwXCN0fCM3HyL1.CNz.iBf.BHw.BHf.hLf.BHfPCHf.RKz3BM3TSMzfCLwjCMvjSL2jyMJ.BHfDCHf.BHx.BHf.RMf.BHsTiK1DSL0.CNyXSNzPSM3.CL3n.Hf.RLf.BHfHCHf.BH1.BHfPiK0HCL1bSN4TCL2DCMwDSLyn.Hf.RLf.BHfHCHf.BH2.BHfzRLtLiLwbyM4fCM2DCM0.CNvXiBf.BHw.BHf.hLf.BHffCHf.RKw3hL1LSL3DSNxPCNwjSNzXyLJ.BHfDCHf.BHx.BHf.RNf.BHsLiKxDiLxTiM1XSN4jCNwXCN4n.Hf.RLf.BHfHCHf.RLv.BHfDiKzTSNw.iM0XCM0HSL2fSN1n.Hf.RLf.BHfHCHf.RLw.BHfzRLtHiL0.SN4fCLx.SL2HSLwjiBf.BHw.BHf.hLf.BHwHCHf.RLtLCLvPyL1LyM2TiL0LiL4XiBf.BHw.BHf.xLf.BHsDCHf.RKw3hM0.CL1PCM1fyL3LyM3jSLJ.BHfDCHf.BHy.BHf.BLf.BHsXiKwPiLzTSN3XSNyfCM2XSM1n.Hf.RLf.BHfLCHf.BHw.BHfDiK0LSNvTSMzXiM1TSL4DiM0n.Hf.RLf.BHfLCHf.BHx.BHf.iKvLyM1XiL0fCMyLCM1DSL4n.Hf.RLf.BHfLCHf.BHy.BHfzRMtTyM1fiM4PCN2biMxPSMwHiBf.BHw.BHf.xLf.BHfPCHf.RKx3xL3fSNzjiMyHiMzPiM0LyLJ.BHfDCHf.BHy.BHf.RMf.BHx3BM0.yMzXyM2PiM2LCM1DSNJ.BHfDCHf.BHy.BHf.hMf.BHv3hMvLSM3bCLyDyL1PCMz.SNJ.BHfDCHf.BHy.BHf.xMf.BHv3RMvjSL0TCL4PiMxLSM1TyMJ.BHfDCHf.BHy.BHf.BNf.BHw3xM4TyLxfCLxDCLzjCM4jSMJ.BHfDCHf.BHy.BHf.RNf.BHv3xMxPSMzDyMxLyMxfSL2jSNJ.BHfDCHf.BHy.BHfDCLf.BHx3RNwjyL3XyL3XCN2DyLybSNJ.BHfDCHf.BHy.BHfDSLf.BHsTiK1HSN4LCL4byLvTiL4bCN0n.Hf.RLf.BHfLCHf.RLx.BHfzRLtDSL4DiL2DSMzLSMvHCNvfiBf.BHw.BHf.BMf.BHsDCHf.RKv3RM3DiL0bCN2jyMyPCLyjyLJ.BHfDCHf.BHz.BHf.BLf.BHsPiK4HCN4jiLxbSLzHyLyLSN3n.Hf.RLf.BHfPCHf.BHw.BHfzRMtTyLzjiLz.yLvLCLyjSM0DiBf.BHw.BHf.BMf.BHfHCHf.BLtDCNx.SLxjSNvDSL2.yMyDiBf.BHw.BHf.BMf.BHfLCHf.RKw3RL0jSN1fCM4TyL1fSN0bSMJ.BHfDCHf.BHz.BHf.BMf.BHsDiK3fSNv.iLvfCM2LiLvTSM2n.Hf.RLf.BHfPCHf.BH0.BHfzRLtDSMv.CN2HyL2LSM3.SNyLiBf.BHw.BHf.BMf.BHfXCHf.RLtDiM0DCNxjCM3DSLxPCN2fiBf.BHw.BHf.BMf.BHfbCHf.RMtHSLzDCL2TSLyPiL2byLzPiBf.BHw.BHf.BMf.BHffCHf.RKy3RN1fSN1LCN1DCM1TCM0PSLJ.BHfDCHf.BHz.BHf.RNf.BHs.iK3DCN2DCN1bSL2jCN2.iMwn.Hf.RLf.BHfPCHf.RLv.BHfDiKyDSN4DyL4fyLyPSMvLSL2n.Hf.RLf.BHfPCHf.RLw.BHfTiK2bSM3XyLwbCL1HyL2bSNyn.Hf.RLf.BHfPCHf.RLx.BHfzBMtPyM1.yL0TSNzjCMvDCN0TiBf.BHw.BHf.RMf.BHsDCHf.RKw3RMx.SN4LyMvjSM1PiLvjCLJ.BHfDCHf.BH0.BHf.BLf.BHs.iK3XSM0DiLzjCLxbiL0HiLvn.Hf.RLf.BHfTCHf.BHw.BHfzBLtjSN3HSL2TCNxbCLxXyL1biBf.BHw.BHf.RMf.BHfHCHf.RKw3BL2jCL4DyM3byLyfiL0XCNJ.BHfDCHf.BH0.BHf.xLf.BHs.iK2jCN0TyMzXCLy.CNvbSMvn.Hf.RLf.BHfTCHf.BHz.BHfzBLtbiLyXSN0DSM3jSM3PyL0DiBf.BHw.BHf.RMf.BHfTCHf.RKv3RNzLiM1XCM0fSLxjCN3HCNJ.BHfDCHf.BH0.BHf.hMf.BHs.iK3byLv.yLyXyL1.SNyDCMvn.Hf.RLf.BHfTCHf.BH2.BHfzBLtfCN2byL2jiL4fiLw.SLzPiBf.BHw.BHf.RMf.BHffCHf.RKv3RNwLSNvjyM4HSNv.CL3TCMJ.BHfDCHf.BH0.BHf.RNf.BHs.iK3XyM3jCM0fSN4.CL4bCL0n.Hf.RLf.BHfTCHf.RLv.BHfzRLtDSMvHiM2XCLw.SLyDCNyXiBf.BHw.BHf.RMf.BHwDCHf.RKv3BN4TCMvTSM4.SMyPiLw.iLJ.BHfDCHf.BH0.BHfDiLf.BHsDiKvTCN1DSM1fCM0.SNxbyMyn.Hf.RLf.BHfXCHf.RKw.BHfzRLtTSNvDCM2XSLzPyM4.iMzjiBf.BHw.BHf.hMf.BHf.CHf.RKv3RNvHSNzbCNzLCL2PyM4fiMJ.BHfDCHf.BH1.BHf.RLf.BHsDiKvLSL4fyMwjCLxPiM0fiLvn.Hf.RLf.BHfXCHf.BHx.BHfzBLtjSMxTCLxPCN4.CN4jiM0fiBf.BHw.BHf.hMf.BHfLCHf.RKv3RNvbyM4jSL3PyLxHyL0biLJ.BHfDCHf.BH1.BHf.BMf.BHs.iK2TCN1.SL1.SM3jiLwfSLzn.Hf.RLf.BHfXCHf.BH0.BHfzBLtjCL4biM3jyL4.SL3HCM4TiBf.BHw.BHf.hMf.BHfXCHf.RKv3RNyPCMvPiMwDSM3bSMxPCMJ.BHfDCHf.BH1.BHf.xMf.BHs.iK3HCLwHCLvjiMx.iM1XSMvn.Hf.RLf.BHfXCHf.BH3.BHfzBLtfyLwXyL1XiM2HSMwTCN1jiBf.BHw.BHf.hMf.BHfjCHf.RKw3BLy.SLvTSNzfCMzfSL3DiLJ.BHfDCHf.BH1.BHfDCLf.BHsDiKvXCM0biL3DSLwHiM2.SNvn.Hf.RLf.BHfXCHf.RLw.BHfzBLtbyM4byL3biLzHyLwbiLv.iBf.BHw.BHf.hMf.BHwHCHf.RKw3BLzHCLwfCL0TSNwTCNyHSMJ.BHfDCHf.BH2.BHfzRLf.BHsDiK0TCL1HSN2LCM4jiL4fSLvn.Hf.RLf.BHfbCHf.BHv.BHfzBLtfSN4LSMvbiMxLiM2HCM3TiBf.BHw.BHf.xMf.BHfDCHf.RKw3BLvTyL4TiM0.CN1LiMzbSMJ.BHfDCHf.BH2.BHf.hLf.BHsDiKvDiMzTSMzDSL4DSLvDCL2n.Hf.RLf.BHfbCHf.BHy.BHfzBLtfyM1LiM0jCLv.yL4XyMxjiBf.BHw.BHf.xMf.BHfPCHf.RKv3xMwjyLyjyM3bSN1.CL0HSMJ.BHfDCHf.BH2.BHf.RMf.BHs.iK4PyL3.SM0bSMybCL2fCN1n.Hf.RLf.BHfbCHf.BH1.BHfzBLtjyLxHiL4LSN4XCNw.SNwLiBf.BHw.BHf.xMf.BHfbCHf.RKv3BN4TiMy.SM4fCL1fiLybyLJ.BHfDCHf.BH2.BHf.BNf.BHs.iK4DiM2.iLvLiLvfSNxLyLzn.Hf.RLf.BHfbCHf.BH4.BHfzBLtjyL0jyMxHyMyLCM4biMx.iBf.BHw.BHf.xMf.BHw.CHf.RKw3BL4LiLxTCM2jSLxTSN2XiMJ.BHfDCHf.BH2.BHfDSLf.BHs.iK3PSLx.SLyXCM4jCMvPSNwn.Hf.RLf.BHfbCHf.RLx.BHfzBLtjCMxTiL2XSMwbCN1fCLzHiBf.BHw.BHf.BNf.BHsDCHf.RKw3RMwbSNzDSN0DyM0DyMvjCLJ.BHfDCHf.BH3.BHf.BLf.BHs.iK3DCNvXyMyDiLxPCL1.CL1n.Hf.RLf.BHffCHf.BHw.BHfzRLt.yL3biL2biMvLSLzjCMwPiBf.BHw.BHf.BNf.BHfHCHf.RKw3BLx.yLvbSMz.CN4LSM0PyMJ.BHfDCHf.BH3.BHf.xLf.BHs.iK4HyL1XSM1PiL2LCNyPiLyn.Hf.RLf.BHffCHf.BHz.BHfzBLtfiL4jCL3LSLwLiM2.yLzjiBf.BHw.BHf.BNf.BHfTCHf.RKv3RNyLSNxTCMzjCNzfSL2TCLJ.BHfDCHf.BH3.BHf.hMf.BHsDiKv.SN4.SN0DCL1DiLzfyM3n.Hf.RLf.BHffCHf.BH2.BHfzBLtfCM0DiL4PyLvHSNz.yL1jiBf.BHw.BHf.BNf.BHffCHf.RKv3RNvHSLxjiLyHCN3LCM0LCMJ.BHfDCHf.BH3.BHf.RNf.BHs.iK4PiL4fiL1DCMvPCLybCM3n.Hf.RLf.BHffCHf.RLv.BHfzRLt.SM0byLx.SLwbSN0.CMyjiBf.BHw.BHf.BNf.BHwDCHf.RKv3BNyPiM3DCL4LiM4HyM2jSMJ.BHfDCHf.BH3.BHfDiLf.BHs.iK4XSNwDCMwfCMybSN0byM1n.Hf.RLf.BHfjCHf.RKw.BHfzRLtTyL2LCM0biM2.iLwDyM4HiBf.BHw.BHf.RNf.BHf.CHf.RKv3BNxfyLzLiL2HiLvjSL1bSMJ.BHfDCHf.BH4.BHf.RLf.BHsDiKvbSL1PCL4XCNyHiL2TyL4n.Hf.RLf.BHfjCHf.BHx.BHfzBLtjyL2DyLvHyMxLCN3PSM3LiBf.BHw.BHf.RNf.BHfLCHf.RKv3RNwLCN3HSLyXyLzPSNvjyMJ.BHfDCHf.BH4.BHf.BMf.BHs.iK2TiM0HyMv.iM1HiMwHSNxn.Hf.RLf.BHfjCHf.BH0.BHfzBLtjSN2DSNvLSM1HSMzTyM2XiBf.BHw.BHf.RNf.BHfXCHf.RKv3RN0DSLy.iM3fSL4.CM1.iLJ.BHfDCHf.BH4.BHf.xMf.BHs.iK4.yL4jiLxjSMxXSMwjyM3n.Hf.RLf.BHfjCHf.BH3.BHfzBLtfCMxfSMwXyL3bSNyjCM0LiBf.BHw.BHf.RNf.BHfjCHf.RKv3RNzHSL0fiL3DCNvLSLyDSLJ.BHfDCHf.BH4.BHfDCLf.BHsDiKwXCLvjSMvjSM1LCMzXCLzn.Hf.RLf.BHfjCHf.RLw.BHfzBLtbCNxbiL2bSL3LSMyHyMwTiBf.BHw.BHf.RNf.BHwHCHf.RKv3RNyfyM1XCLvHiM0TCLxjyLJ.BHfDCHf.RLv.BHfzRLf.BHsDiKzjCL0fCMxTCMxXCM3LSL0n.Hf.RLf.BHw.CHf.BHv.BHfzBLtfSM3jCNwjCL2LiM2bCL1LiBf.BHw.BHfDCLf.BHfDCHf.RKw3BLz.SN2LSNvDyMzfiM0biLJ.BHfDCHf.RLv.BHf.hLf.BHsDiKvHyL0.iM4jSNvDSM3.CNwn.Hf.RLf.BHw.CHf.BHy.BHfzBLtfSL1DSL3TyL3LyM4XiM4HiBf.BHw.BHfDCLf.BHfPCHf.RKv3BNvPSN0fyMvDSLyLyMxfCLJ.BHfDCHf.RLv.BHf.RMf.BHs.iK4HiLvfyLzLyMzPiL2bSN0n.Hf.RLf.BHw.CHf.BH1.BHfzRLt.iLvbSMxjCL1bSN4LSL1PiBf.BHw.BHfDCLf.BHfbCHf.RKv3BN4HSMxbiMyjCN1TCN2TiLJ.BHfDCHf.RLv.BHf.BNf.BHs.iK2jiM4fyM0jyLwbyL4fCL2n.Hf.RLf.BHw.CHf.BH4.BHfzBLtjCN3bSN0XyL3.CNzPSLwXiBf.BHw.BHfDCLf.BHw.CHf.RKw3BL4fyM1HSMwHiLvbCLyDiLJ.BHfDCHf.RLv.BHfDSLf.BHs.iK2jyMvTyL3byL0LCN4bCL4n.Hf.RLf.BHw.CHf.RLx.BHfzRLt.yLwfCN2DyMyXSMxXCM3jiBf.BHw.BHfDSLf.BHsDCHf.RKw3hMvbCL1DiL1XCN4jSLvfSNJ.BHfDCHf.RLw.BHf.BLf.BHs.iK2XCM1DSNxjCL3HCN2.CM3n.Hf.RLf.BHwDCHf.BHw.BHfzRLt.iL2jiM4jSM1LSN3.SLvLiBf.BHw.BHfDSLf.BHfHCHf.RKv3RN1byLyPiL2.CM2biL4PSNJ.BHfDCHf.RLw.BHf.xLf.BHs.iK3XCNy.SLyjSL1.SL0XiL0n.Hf.RLf.BHwDCHf.BHz.BHfzBLtfCL4fyLzfSN2TSL3DSM3.iBf.BHw.BHfDSLf.BHfTCHf.RKv3RN2DCNyHCM0PiLvPSM0jyLJ.BHfDCHf.RLw.BHf.hMf.BHs.iK4PyL3fSM0.SMwjSNzLiLzn.Hf.RLf.BHwDCHf.BH2.BHfzBLtfCM3DCMzDyMyXiLxDyLwLiBf.BHw.BHfDSLf.BHffCHf.RKv3BN3TCM2TSMwXyLwjiL2PSNJ.BHfDCHf.RLw.BHf.RNf.BHs.iK4XSNybSLvfCLyjCN0TSN1n.Hf.RLf.BHwDCHf.RLv.BHfzRLt.iMwfyLyXiLv.yMwPSLwDiBf.BHw.BHfDSLf.BHwDCHf.RKv3BNwTyM1XCNwDyL2.CNzjiMJ.BHfDCHf.RLw.BHfDiLf.BHsDiKvTCL3LSNzHCMwLyLy.CL3n."
+                CurrentPosture="-1" base64:StageRotationData="36.iJYW+FWN.7K....fwkC.+Lpjc8K..........B........3O"
+                LEDColour="-6420686" PostureName1="Fist" PostureName2="Puppet Hand"
+                PostureName3="Open Hand" PostureName4="One Finger Point" PostureName5="Custom Posture 1"
+                PostureName6="Custom Posture 2" PostureName7="Custom Posture 3"
+                PostureName8="Custom Posture 4" PostureName9="Custom Posture 5"
+                PostureName10="Custom Posture 6" PostureName11="Custom Posture 7"
+                PostureName12="Custom Posture 8" CurrentDirection="0"/>
+      <INPUTSETS>
+        <INPUTSET Identifier="Flex">
+          <INPUT Identifier="Thumb" Type="3" Value="0.45073"/>
+          <INPUT Identifier="IndexLower" Type="3" Value="0.192146"/>
+          <INPUT Identifier="IndexUpper" Type="3" Value="0.706836"/>
+          <INPUT Identifier="MiddleLower" Type="3" Value="0.234286"/>
+          <INPUT Identifier="MiddleUpper" Type="3" Value="0.378403"/>
+          <INPUT Identifier="RingUpper" Type="3" Value="0.0846154"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Orientation">
+          <INPUT Identifier="Pitch" Type="3" Value="0.579072"/>
+          <INPUT Identifier="Roll" Type="3" Value="0.483801"/>
+          <INPUT Identifier="Yaw" Type="3" Value="0.453446"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Posture">
+          <INPUT Identifier="Posture1" Type="2" Value="0"/>
+          <INPUT Identifier="Posture2" Type="2" Value="0"/>
+          <INPUT Identifier="Posture3" Type="2" Value="0"/>
+          <INPUT Identifier="Posture4" Type="2" Value="0"/>
+          <INPUT Identifier="Posture5" Type="2" Value="0"/>
+          <INPUT Identifier="Posture6" Type="2" Value="0"/>
+          <INPUT Identifier="Posture7" Type="2" Value="0"/>
+          <INPUT Identifier="Posture8" Type="2" Value="0"/>
+          <INPUT Identifier="Posture9" Type="2" Value="0"/>
+          <INPUT Identifier="Posture10" Type="2" Value="0"/>
+          <INPUT Identifier="Posture11" Type="2" Value="0"/>
+          <INPUT Identifier="Posture12" Type="2" Value="0"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Direction">
+          <INPUT Identifier="Forwards" Type="2" Value="0"/>
+          <INPUT Identifier="Backwards" Type="2" Value="0"/>
+          <INPUT Identifier="Left" Type="2" Value="0"/>
+          <INPUT Identifier="Right" Type="2" Value="0"/>
+          <INPUT Identifier="Up" Type="2" Value="0"/>
+          <INPUT Identifier="Down" Type="2" Value="0"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Drum">
+          <INPUT Identifier="DrumValue" Type="1" Value="0.452504"/>
+        </INPUTSET>
+        <INPUTSET Identifier="GyroPeak">
+          <INPUT Identifier="GyroPeakX" Type="1" Value="0"/>
+          <INPUT Identifier="GyroPeakY" Type="1" Value="0"/>
+          <INPUT Identifier="GyroPeakZ" Type="1" Value="0"/>
+        </INPUTSET>
+      </INPUTSETS>
+      <OUTPUTSETS>
+        <OUTPUT Identifier="SetNorth" Name="Set North" Value=""/>
+        <OUTPUT Identifier="LEDColour" Name="LED Colour" Value="-65536"/>
+        <OUTPUT Identifier="MotorPulse" Name="Motor Pulse" Value="0"/>
+      </OUTPUTSETS>
+    </DEVICE>
+    <DEVICE DeviceType="1" DeviceId="ArduIMUGlove" DeviceName="RIGHT ArduIMU Glove">
+      <SETTINGS Connected="0" BluetoothDevice="/dev/cu.usbserial-AH01DOW6" Hand="1"
+                base64:CalibrationData="72.Rgq29nFuz4C88SEOg.qb93jXP3C.....JwfP+ThAg8yiBWGOygVL+78Ss8SiW5xO0QhQ.A..H+SA.n+PRmEC.EY1h9C6tt6O"
+                base64:PostureData="9637.NUVcxEFaNUFc28lbqMUZsAGakoicwn.akElbtIUXzUlNf.iKxTCLv.CLfD1XzYTctM1SlY1bkQmNf.iKvDCLv.CLJvTX4UlbyoCHf.xLJvTX4Ulbf.BHf.iNf.BH1n.SgkWYxABHf.RL5.BHwLiBLEVdkIGHf.BHxnCHfDiLJ.BHf.CHf.BHv.BHfzRLf.BHs.iK2PiMyHCNwDSMzXyLxTiM3n.Hf.BLf.BHf.CHf.BHv.BHfHiK4fyLvLCL0TyM1LiLzPiMyn.Hf.BLf.BHf.CHf.BHw.BHfTiKwPCNyPyLvfiMxPiL1bSM3n.Hf.BLf.BHf.CHf.BHx.BHfzRLtPiLzLyL3HiLwTCM4jCN2fiBf.BHv.BHf.BLf.BHfLCHf.xMtfCL3PiLyjSN0jyMwXyM4biBf.BHv.BHf.BLf.BHfPCHf.RK33RMvbCM4TCN3.SLxXSN0LSLJ.BHf.CHf.BHv.BHf.RMf.BHsHiK0PSNv.CL0.SL1LiL1jCLzn.Hf.BLf.BHfDCHf.RKw.BHfDiK3fCM4LSLvfyMzjyL3jiM0n.Hf.BLf.BHfDCHf.BHv.BHfHiK4PSLz.yM4DCN4LCLvTyL2n.Hf.BLf.BHfDCHf.BHw.BHfzxMtTCNxHSN0PSL2bCN0XCMzTiBf.BHv.BHf.RLf.BHfHCHf.BLtXyM1XyL1XyL1HSM2DyMwXiBf.BHv.BHf.RLf.BHfLCHf.RKx3xMzjCM0jyMzLCM4jyM0TSNJ.BHf.CHf.BHw.BHf.BMf.BHx3hL1fCN0LCMxTSN2jiMwPyLJ.BHf.CHf.BHw.BHf.RMf.BHw3BN1LCM0LyL3fiLwPSLwDyLJ.BHf.CHf.BHx.BHfzRLf.BHs.iKv.iM1HSNzjyLvfyM0LCLwn.Hf.BLf.BHfHCHf.BHv.BHfzBLtHiL4PyM4TiM1HSL1PiM3fiBf.BHv.BHf.hLf.BHfDCHf.RLtTSLxLSMxfiLzHSLwDiLvXiBf.BHv.BHf.hLf.BHfHCHf.RKv3xLx.SNyfyM1XCLvHiM0TCLJ.BHf.CHf.BHx.BHf.xLf.BHz3xL4jyL4fCNvLyMw.SNybSMJ.BHf.CHf.BHx.BHf.BMf.BHv3hLxfSNz.SNyLSNzHyM4PCNJ.BHf.CHf.BHx.BHf.RMf.BHs.iKyTCN1HSN4bSL2PiL1LCLvn.Hf.BLf.BHfLCHf.RKw.BHfzRLtDSM3jCN2DiMzPSN2LyM0TiBf.BHv.BHf.xLf.BHf.CHf.RKx3RL3HCL3PyM4fCNwHCN1XiLJ.BHf.CHf.BHy.BHf.RLf.BHx3RM1TSNxXyLwLCMv.iL1fiMJ.BHf.CHf.BHy.BHf.hLf.BHs.iK0HSNwfCL0HiM2LyLyjCNzn.Hf.BLf.BHfLCHf.BHy.BHfHiKxfCMy.CM3TyMxTCMvHCNyn.Hf.BLf.BHfLCHf.BHz.BHfPiK0LCM0jyM3byL1fyM2PCMwn.Hf.BLf.BHfLCHf.BH0.BHfzBLtbyM3fSLvXiLvLCL2jiLxPiBf.BHv.BHf.BMf.BHsDCHf.RLtPCN1XCNxDyM1TCN4jiM0fiBf.BHv.BHf.BMf.BHf.CHf.BLtjSNyPyL3fSN4TSL2.SM4LiBf.BHv.BHf.BMf.BHfDCHf.BLtDiLy.CNzfiM0TSLvPiMybiBf.BHv.BHf.BMf.BHfHCHf.BLtfiL1byM0jCL3PyMvDSMyfiBf.BHv.BHf.BMf.BHfLCHf.RKv3hL1jiMvjSM2.SMvLiLyPSNJ.BHf.CHf.BHz.BHf.BMf.BHv3BMyXyL3biL2.iM3jCLw.iMJ.BHf.CHf.BHz.BHf.RMf.BHw3RM1HSLwXCLxXCN2fyL0XSNJ.BHf.CHf.BH0.BHfzRLf.BHs.iKv.yM3LCMxXCLyTSL4TSM4n.Hf.BLf.BHfTCHf.BHv.BHfzRLt.CMyjyLxXyM1LSL0LCL2XiBf.BHv.BHf.RMf.BHfDCHf.RLtXiL4XCNyfSMxDSN0byL4biBf.BHv.BHf.RMf.BHfHCHf.RKw3xM1fiL4PCM0LiMx.SNw.iMJ.BHf.CHf.BH0.BHf.xLf.BHwjiK0jyLxPiMzTSN4XCL4LyM0n.Hf.BLf.BHfTCHf.BHz.BHfXiK4LCMzDSM3DyMxXCL2PiLxn.Hf.BLf.BHfTCHf.BH0.BHfzBLtXCLvbiLzDCLw.iM1TCN4PiBf.BHv.BHf.hMf.BHsDCHf.RLtjCL2bCL3XCMzfiM1jCMyPiBf.BHv.BHf.hMf.BHf.CHf.RKv3RL0TyMwfCNvLCMvTyM1DyMJ.BHf.CHf.BH1.BHf.RLf.BHs.iKwTCMxPCN0HCL2LSL4HiMvn.Hf.BLf.BHfXCHf.BHx.BHf.iK4XiLzbSN3HSN2fCNx.CNvn.Hf.BLf.BHfXCHf.BHy.BHfzBLtjyMxbiMxbiMyTCLvHSLyXiBf.BHv.BHf.hMf.BHfPCHf.RK13hL3TCN1HCMzTCNyDiL4fCNJ.BHf.CHf.BH1.BHf.RMf.BHw3RM3HSNzLyM4bSLwDSMwDiLJ.BHf.CHf.BH2.BHfzRLf.BHsHiKzbCM0PiMwjCMvbiM0LCNwn.Hf.BLf.BHfbCHf.BHv.BHfzBMt.iL0fyLyXCL1bSL4jyMvbiBf.BHv.BHf.xMf.BHfDCHf.BNtjSL4bCL3HSMwjSMyDiL0.iBf.BHv.BHf.xMf.BHfHCHf.RKv3BNyLiM2.SN2LyM2byM2DCLJ.BHf.CHf.BH2.BHf.xLf.BHx3xM3XyMx.SN4DSLyPiMzLiMJ.BHf.CHf.BH2.BHf.BMf.BHsDiKwfyMxHCL1jiL1LCM0fiL0n.Hf.BLf.BHfbCHf.BH0.BHfzhLtHSL0bCN1jyLyfSN3jiL0fiBf.BHv.BHf.BNf.BHsDCHf.RKw3BMzXSN0DyMzXSNz.iMwHCNJ.BHf.CHf.BH3.BHf.BLf.BHsHiKwTCLvPSM3bSL2LCM1DSNwn.Hf.BLf.BHffCHf.BHw.BHf.iKyXSMzLCNw.yL1bSM3PiLyn.Hf.BLf.BHffCHf.BHx.BHfzBLtjSNvXCN0PiMxjSMwXiMvHiBf.BHv.BHf.BNf.BHfLCHf.hLtHCL2.SN0LCNzTSN2byM3LiBf.BHv.BHf.BNf.BHfPCHf.hMtLCL3XCM4.iMyDSLvLSMwXiBf.BHv.BHf.BNf.BHfTCHf.RKv3RN0jiL2.iM0XSLvfCN0XiLJ.BHf.CHf.BH4.BHfzRLf.BHv3RLzTCLyTSNvbiMxXSL0HCLJ.BHf.CHf.BH4.BHf.BLf.BHsDiKvPiM0XiM1.SM0XyM4LiLwn.Hf.BLf.BHfjCHf.BHw.BHfzBLtXSMv.SN1HyL2XSM4PSMzLiBf.BHv.BHf.RNf.BHfHCHf.BLtbCN4.SL1XiMz.iL3DiM2biBf.BHv.BHf.RNf.BHfLCHf.RK33hL0TSN0XiMzjyM3.iL2LCMJ.BHf.CHf.BH4.BHf.BMf.BH13BL0.iM4fiL3.yLyPCM2HyMJ.BHf.CHf.BH4.BHf.RMf.BHw3hL4bSL4TCMyPSM2.yLwHSMJ.BHf.CHf.RLv.BHfzRLf.BHw3RM3TSNwfiM1PSNyHiL0DCLJ.BHf.CHf.RLv.BHf.BLf.BHv3RMyHCL1.yLxTSLzTyMxDCMJ.BHf.CHf.RLv.BHf.RLf.BHv3hM0TSNxjiM3PiMyfSN2bSLJ.BHf.CHf.RLv.BHf.hLf.BHv3xM3bCL2HyMwfSLzLCM1LSLJ.BHf.CHf.RLv.BHf.xLf.BHv3hLyXiLxXSLwDiM0.CM1XSNJ.BHf.CHf.RLv.BHf.BMf.BHs.iKxXSMxjSL0PSL3DCM3.CMwn.Hf.BLf.BHw.CHf.BH0.BHfDiK1bCL0TyM3TiM0TSN2TyLzn.Hf.BLf.BHwDCHf.RKw.BHfHiKvjyMybCM1byM1TCNvfSLwn.Hf.BLf.BHwDCHf.BHv.BHfzRLt.CLwXCLybiLxTyMxLiL1biBf.BHv.BHfDSLf.BHfDCHf.RKw3hM1HSL1jCNwPSLvjCNvHiLJ.BHf.CHf.RLw.BHf.hLf.BHv3BN4.yM1jCM3DiM0fSNyTSMJ.BHf.CHf.RLw.BHf.xLf.BHs.iKzbCLyPyLyfSLwXiMzTCNwn.Hf.BLf.BHwDCHf.BHz.BHfzxLtPSMyDCN0LSL4jCLvTSLxbiBf.BHv.BHfDSLf.BHfTCHf.hLtHyMwLSM3HSMwTyMwXSM0LiBf.BHv.BHfDiLf.BHsDCHf.RKv3RLyfCN2jCNx.yMvPCM1.SLJ.BHf.CHf.RLx.BHf.BLf.BHv3hL4XiL4DiL4DyMwLyMwPiMJ.BHf.CHf.RLx.BHf.RLf.BHx3xMz.SM0LyL2jCL0fCNybSNJ.BHf.CHf.RLx.BHf.hLf.BHs.iK4.iMz.iM2XCLxDSM2TSNyn.Hf.BLf.BHwHCHf.BHy.BHfjiKvTCNwXSNyXCM4HSNwjSNxn.Hf.BLf.BHwHCHf.BHz.BHf.iK2.SLyXyMzLyM3LSN0.CNwn.Hf.BLf.BHwHCHf.BH0.BHfzBLtjSNwHSN2jiMvHCNwLyMxDiBf.BHw.BHf.BLf.BHsDCHf.RKx3BNy.CLxXCN1TCLvTCM4LiLJ.BHfDCHf.BHv.BHf.BLf.BHz3BLyjiM0LyLvDiLyjCLwLyMJ.BHfDCHf.BHv.BHf.RLf.BHsPiK1PyLvbiLwHCNxjSM3jCNzn.Hf.RLf.BHf.CHf.BHx.BHfzBLtTiMyLCMwTSM2jyM4TCNybiBf.BHw.BHf.BLf.BHfLCHf.hLtfyL2.CMwXSL1PyL4fSL4LiBf.BHw.BHf.BLf.BHfPCHf.RKw3BM2XCMvPSMzbiM4DyLzTiLJ.BHfDCHf.BHv.BHf.RMf.BHs.iKybCN3DyL2PyL0jSLy.CN1n.Hf.RLf.BHf.CHf.BH1.BHfzxMtDCMwHCN2LiL1fSLxbCMzDiBf.BHw.BHf.BLf.BHfbCHf.RMtbiM2.CN3fSNv.yM0XCNyXiBf.BHw.BHf.BLf.BHffCHf.xLtjyLz.CM2XSN3jyMzXCL4PiBf.BHw.BHf.BLf.BHfjCHf.RKv3hLvXCMxfCM0LyLxXiLxTyLJ.BHfDCHf.BHv.BHfDCLf.BHsDiK3.iLz.CN0biMvDSL1TyM2n.Hf.RLf.BHf.CHf.RLw.BHfzRMtbiMyDCM4byL3LSLwbiM2XiBf.BHw.BHf.BLf.BHwHCHf.BLtLCLyLSM0fSLy.iL1PiL3HiBf.BHw.BHf.RLf.BHsDCHf.RKw3hMv.CLyTCMxjCLv.CN0PSMJ.BHfDCHf.BHw.BHf.BLf.BHw3xLzfSLzTyL1TyMwTCLxXSNJ.BHfDCHf.BHw.BHf.RLf.BHsbiK2PSMwTyL4.yL4XSLwfSL1n.Hf.RLf.BHfDCHf.BHx.BHf.iKzbiLybyL3biL4jSMybiM1n.Hf.RLf.BHfDCHf.BHy.BHfzRLtTSN3TSN0jyM1fiL4TiL3fiBf.BHw.BHf.RLf.BHfPCHf.RKw3xM4LiM2DSN1TSM4jCL1.SLJ.BHfDCHf.BHw.BHf.RMf.BHv3xL0XCNwHCL0jCN2jyLvLCLJ.BHfDCHf.BHw.BHf.hMf.BHy3BM1biL0TyL0LSNxbiMwHyLJ.BHfDCHf.BHw.BHf.xMf.BHz3xMwjSM3TCMwfyMvDSL2DSNJ.BHfDCHf.BHw.BHf.BNf.BHsPiKwLyMvDSM3DSN0PSN0XCL0n.Hf.RLf.BHfDCHf.BH4.BHfzBMt.iL0.yLwTiM1XSL4fyMy.iBf.BHw.BHf.RLf.BHw.CHf.RKv3hM1XCLwDSM2DCN3PSL0TyLJ.BHfDCHf.BHw.BHfDSLf.BHw3BM0LiL3LyM3XyM2LiM3DiMJ.BHfDCHf.BHw.BHfDiLf.BHv3BM2DCN0jSL0bCL3TCMwfyMJ.BHfDCHf.BHx.BHfzRLf.BHw3hL2.CL0DiLz.SNxDCLx.SMJ.BHfDCHf.BHx.BHf.BLf.BHsLiK4TSNwXSLvPyLwXyMwDCMyn.Hf.RLf.BHfHCHf.BHw.BHfPiKwHSN4DCNvjCNzPSN2.yMvn.Hf.RLf.BHfHCHf.BHx.BHfzxLtXSL0fCMvDSN1XCL4PSN2DiBf.BHw.BHf.hLf.BHfLCHf.RKx3xMzjCMzDSLzXCN0.SM3TSNJ.BHfDCHf.BHx.BHf.BMf.BHw3hL4fiM0XCM1LiMxLCLzXSNJ.BHfDCHf.BHx.BHf.RMf.BHsDyLtLSLyfyL3jSM3bCMvHyLzPiBf.BHw.BHf.hLf.BHfXCHf.hLtTyMwjCN4TyL1HCN0PCLvPiBf.BHw.BHf.hLf.BHfbCHf.RKx3BLzDCMzXCMzbyL2HCMyXSMJ.BHfDCHf.BHx.BHf.BNf.BHsHiKzXyL0HSLxPiLwPSL2HyL1n.Hf.RLf.BHfHCHf.BH4.BHfPiK1fyMzDSNzDCM0HCLxXyL2n.Hf.RLf.BHfHCHf.RLv.BHf.iK2LSMwXSMzbiM2jSNvDSLxn.Hf.RLf.BHfHCHf.RLw.BHfHiKxfSNvPCMyfCLwfyM4fCNyn.Hf.RLf.BHfHCHf.RLx.BHfzRMtbyM2jiMwbyLvjSM2.yLwHiBf.BHw.BHf.xLf.BHsDCHf.RKw3xL4DCN2.yL2jCMzbSNybCLJ.BHfDCHf.BHy.BHf.BLf.BHsbiKyPCN4.CM1.SN1fCLwbSM3n.Hf.RLf.BHfLCHf.BHw.BHfTiKvXiMwTCMzbSN4fCLzXCN3n.Hf.RLf.BHfLCHf.BHx.BHfzBLtfyM0DSM3.yMwTSL2jCMzLiBf.BHw.BHf.xLf.BHfLCHf.hLtjCN0LSN1XiLyXSLwPSMvHiBf.BHw.BHf.xLf.BHfPCHf.RKv3BN2.yMyLSLzDCN4jSLvfSNJ.BHfDCHf.BHy.BHf.RMf.BHw3BN1.iMxTSN3HiL3PSMzTSNJ.BHfDCHf.BHy.BHf.hMf.BHsTiKvTSLwHiMzfCLw.iL0LSNwn.Hf.RLf.BHfLCHf.BH2.BHfzRMtfSN1fCMx.CLxfiM3XSMxLiBf.BHw.BHf.xLf.BHffCHf.BMtjCNw.CM3TCNyjCNzLyM0.iBf.BHw.BHf.xLf.BHfjCHf.hLtPSMzXyM0XyMzPyL3PyM1XiBf.BHw.BHf.xLf.BHw.CHf.RKw3hL1DyMxbiM4.iM4XyMwXyLJ.BHfDCHf.BHy.BHfDSLf.BHsDiKybCNxHCM4XCN4DCLxDyMyn.Hf.RLf.BHfLCHf.RLx.BHfzRLtLSN1TiL0fSM4fyLxbiMybiBf.BHw.BHf.BMf.BHsDCHf.RKy3BL2XCLzHiM0HSLy.SLxbCLJ.BHfDCHf.BHz.BHf.BLf.BH03BM1HSL4XCNxXSNyPCNwPSMJ.BHfDCHf.BHz.BHf.RLf.BHy3xL1TCL4HyM0PyL1PCLwLyMJ.BHfDCHf.BHz.BHf.hLf.BHs.iKvHSNvjCLwPyL2PCLwbyMxn.Hf.RLf.BHfPCHf.BHy.BHfzhMtHCNzLiMxbSNxjiM3bSMv.iBf.BHw.BHf.BMf.BHfPCHf.RKy3xL3HCNzTiMz.SL3HCM4TSLJ.BHfDCHf.BHz.BHf.RMf.BHwHiK0LSLxTCLv.CLv.CLv.CLvn.Hf.RLf.BHfPCHf.BH1.BHf.iKzDSLx.SM2LCN2fiL3fiL2n.Hf.RLf.BHfPCHf.BH2.BHfzRLv3RNw.CM1LyLyLSLxjCN3HCNJ.BHfDCHf.BHz.BHf.BNf.BHsTiK3DyL0.iM1.yLxPCL4XiM3n.Hf.RLf.BHfPCHf.BH4.BHfzxMt.SLwbCL4XSNv.SNyjSNzDiBf.BHw.BHf.BMf.BHw.CHf.RKy3hMzbyM2fCLyPiLw.iLvTSLJ.BHfDCHf.BHz.BHfDSLf.BHsDiK1jCNzHSM3fSNvDSMwjyM3n.Hf.RLf.BHfPCHf.RLx.BHfLiK2bSLxfyMzPSLxTyL1XiLwn.Hf.RLf.BHfTCHf.RKw.BHfzRLtPiMyHSMx.iM2TiM0jSL3.iBf.BHw.BHf.RMf.BHf.CHf.RKv3BNxfiM3PCLyDSN1LyLzfCMJ.BHfDCHf.BH0.BHf.RLf.BHs.iK3jyM4jSLv.SL1.SM4fyM0n.Hf.RLf.BHfTCHf.BHx.BHfzBLtjCLzHyL3HiLz.iL4TCMw.iBf.BHw.BHf.RMf.BHfLCHf.RKv3hM1jCNz.CL4bCMxbyL1fiLJ.BHfDCHf.BH0.BHf.BMf.BHsDiKw.iM2jyL3fCLzXiL1PiM0n.Hf.RLf.BHfTCHf.BH0.BHfzBLtjiLwDSNzLyMzTiMwLCL4fiBf.BHw.BHf.RMf.BHfXCHf.RKv3BNxbyM2XiMw.CN0DiL3bCNJ.BHfDCHf.BH0.BHf.xMf.BHs.iK0XCL1LyM2biLvfyLxfiL0n.Hf.RLf.BHfTCHf.BH3.BHfzBLtXiL0.yMzHiM2LCN2LSNvDiBf.BHw.BHf.RMf.BHfjCHf.RKv3xMvPiMvjiMyHCM4HCL1TCMJ.BHfDCHf.BH0.BHfDCLf.BHsDiKvjCL1LSN2DCLzHiMyLCL1n.Hf.RLf.BHfTCHf.RLw.BHfzBLtjSN4XCL3.SN4PiMvXCLwfiBf.BHw.BHf.RMf.BHwHCHf.RKv3BNwTiLvDiM4jyMyLyMyPSLJ.BHfDCHf.BH1.BHfzRLf.BHsDiKybCM3fyMxHCNvDiLvfSMvn.Hf.RLf.BHfXCHf.BHv.BHfzBLtjiLvPyM1PSN1HSL4XyL0.iBf.BHw.BHf.hMf.BHfDCHf.RKv3BNz.CNzLyM4XyMy.CLzDSMJ.BHfDCHf.BH1.BHf.hLf.BHsDiKv.iL1XiLvXiL1PCM4TCN0n.Hf.RLf.BHfXCHf.BHy.BHfzBLtXyMwTSLz.yLzHyMwHCMvHiBf.BHw.BHf.hMf.BHfPCHf.RKw3BL0.SNwHiL1DCLvjiLwXyLJ.BHfDCHf.BH1.BHf.RMf.BHs.iK3TyM0DiLzDCMzTSMzDyL3n.Hf.RLf.BHfXCHf.BH1.BHfzBLtfiM1LyM2bSLwHSN1.CNwTiBf.BHw.BHf.hMf.BHfbCHf.RKv3RMzfCM2fSNvDyL3XiL1DCLJ.BHfDCHf.BH1.BHf.BNf.BHs.iK1HSLzLiM1TSM0HSLyjiL3n.Hf.RLf.BHfXCHf.BH4.BHfzBLtfCMzDSLxfyMy.yM2LSNxXiBf.BHw.BHf.hMf.BHw.CHf.RKw3RLzLiM4bCLxLyL4DyMxLiMJ.BHfDCHf.BH1.BHfDSLf.BHs.iK3LCMyDSNwbCMxfSN2.yLzn.Hf.RLf.BHfXCHf.RLx.BHfzBLtjyMxDCM3jSMzfiM3LSL1biBf.BHw.BHf.xMf.BHsDCHf.RKw3BM0TSN4.SNw.SMy.CL4.yLJ.BHfDCHf.BH2.BHf.BLf.BHs.iK3LyL4DCLyPiMvLSLwfSNvn.Hf.RLf.BHfbCHf.BHw.BHfzBLtjCLvbCM2TyL2XSLxjSL0.iBf.BHw.BHf.xMf.BHfHCHf.RKw3BLw.SMwbCLvDSL0HCLyfiMJ.BHfDCHf.BH2.BHf.xLf.BHs.iK1XSLwPyMzDSM1LyM4bCLvn.Hf.RLf.BHfbCHf.BHz.BHfzBLtjyM4LSNyfSN4PCMvbiM0PiBf.BHw.BHf.xMf.BHfTCHf.RKv3RNxjiM4PCL0XSMw.SNxTyLJ.BHfDCHf.BH2.BHf.hMf.BHs.iK3biLvTSLzbyMzLiLxTSLvn.Hf.RLf.BHfbCHf.BH2.BHfzBLtTiL0TSM2bSM1PiLyjSMvHiBf.BHw.BHf.xMf.BHffCHf.RKv3hM4jCN1jSM2LSLwXyLvHSMJ.BHfDCHf.BH2.BHf.RNf.BHs.iK3DyM0jCLxjiMxXCNzXyLwn.Hf.RLf.BHfbCHf.RLv.BHfzRLtDCL0jiM3LSM1DyLxTCL2LiBf.BHw.BHf.xMf.BHwDCHf.RKv3BN3byLyDCL1fSMwTyM2biMJ.BHfDCHf.BH2.BHfDiLf.BHs.iK3XSLybyMxjCN3LSL4LSN2n.Hf.RLf.BHffCHf.RKw.BHfzRLtPSLzXiL3DCM3.yM3jSL3TiBf.BHw.BHf.BNf.BHf.CHf.RKv3xM1HiMwHiMz.CN0biM4XSMJ.BHfDCHf.BH3.BHf.RLf.BHs.iK3TCN1byM0.iMzPiM3LCNzn.Hf.RLf.BHffCHf.BHx.BHfzBLtjSLxHyLybiM4fSNyXCM1HiBf.BHw.BHf.BNf.BHfLCHf.RKv3hM4.yMyPiLvbiMy.SL0bSMJ.BHfDCHf.BH3.BHf.BMf.BHsDiKv.SM3HSMxfSLwPyLwfCN0n.Hf.RLf.BHffCHf.BH0.BHfzBLtjCMz.iMybCNxXSNwjSM0XiBf.BHw.BHf.BNf.BHfXCHf.RKv3RN0TSL0TSLyPiLvDCLzjCNJ.BHfDCHf.BH3.BHf.xMf.BHs.iK1TiMyXCLx.CN4fCNwfSN2n.Hf.RLf.BHffCHf.BH3.BHfzBLtXSLzPSLwDyM0HSMw.CL2DiBf.BHw.BHf.BNf.BHfjCHf.RKv3BNyXiMvLSL1PiM2HCN0DiMJ.BHfDCHf.BH3.BHfDCLf.BHsDiKwHyLvfSNwjCMxjyM2jCL0n.Hf.RLf.BHffCHf.RLw.BHfzBLtfSNzTCN1HiM0.CN2DiL2biBf.BHw.BHf.BNf.BHwHCHf.RKv3RNwbSM2PCN3HSMvbyLxPiLJ.BHfDCHf.BH4.BHfzRLf.BHsDiKzbCLwfCN3TiMwHCM3byM4n.Hf.RLf.BHfjCHf.BHv.BHfzBLtbSNvPiLv.SM0LCN4PCLzLiBf.BHw.BHf.RNf.BHfDCHf.RKv3RNxbiMyXSLzXSMzTCMw.iLJ.BHfDCHf.BH4.BHf.hLf.BHs.iK3PSNyDyLvfCLyDCL3HSL0n.Hf.RLf.BHfjCHf.BHy.BHfzBLtbCMxTiM2fSN1fCMxjSM1TiBf.BHw.BHf.RNf.BHfPCHf.RKv3RN0HSM3jiM4.iM3TiL2HiLJ.BHfDCHf.BH4.BHf.RMf.BHs.iK4bSN0jyLyLiM0fiLwfyL3n.Hf.RLf.BHfjCHf.BH1.BHfzBLtjCNxPiM4.CNwfyM3XiMxDiBf.BHw.BHf.RNf.BHfbCHf.RKv3hMvLCL1.CLvbCL4TyLyXSNJ.BHfDCHf.BH4.BHf.BNf.BHs.iK0jiM2jSNxTCMzDyMzDSNzn.Hf.RLf.BHfjCHf.BH4.BHfzBLtXiM0XSL0PyL4PSLzjyM3.iBf.BHw.BHf.RNf.BHw.CHf.RKw3RLwXyMzfiM4.iMvTSL1LiMJ.BHfDCHf.BH4.BHfDSLf.BHs.iK4PiMyDSMvTCLwHSMwHiLwn.Hf.RLf.BHfjCHf.RLx.BHfzBLtfiM1DiL4HyM4DyL1XSM2biBf.BHw.BHfDCLf.BHsDCHf.RKw3xL2PCN4.CMzXiM1HSNvHCNJ.BHfDCHf.RLv.BHf.BLf.BHs.iK2bCL2PSMxbyMz.CM2fSMxn.Hf.RLf.BHw.CHf.BHw.BHfzBLtfSM3HCLwHCL0byLvPyL3HiBf.BHw.BHfDCLf.BHfHCHf.RKv3BN2HyM0fCN1TyL0XCMzTyLJ.BHfDCHf.RLv.BHf.xLf.BHs.iK1DCMzLCMy.SL3TyLwbSN4n.Hf.RLf.BHw.CHf.BHz.BHfzRLtDiL4TyMyDCL1biM0bCM2DiBf.BHw.BHfDCLf.BHfTCHf.RKv3RNyPyM3TCM3TiL1biMyjiLJ.BHfDCHf.RLv.BHf.hMf.BHs.iK4PiLx.yM4jiLvbiM3byL3n.Hf.RLf.BHw.CHf.BH2.BHfzBLtTCN1bCN4PCN3bSNxPSL4PiBf.BHw.BHfDCLf.BHffCHf.RKv3hMwjCM4jSN3DCMvLyL0.CNJ.BHfDCHf.RLv.BHf.RNf.BHs.iK2HSL1DiL4fSN4.iLzjiMyn.Hf.RLf.BHw.CHf.RLv.BHfzRLt.CNxHyMwTyM0jiL2byLzPiBf.BHw.BHfDCLf.BHwDCHf.RKv3RN1HiLybCNyPSNy.CMwjSNJ.BHfDCHf.RLv.BHfDiLf.BHs.iK4XiMxbCM3TyM0HSLvTyMwn.Hf.RLf.BHwDCHf.RKw.BHfzRLtLyMwLCLxbiLyfCNzTCNxTiBf.BHw.BHfDSLf.BHf.CHf.RKv3BN4PiMwXyLvTCNxfCL4PSMJ.BHfDCHf.RLw.BHf.RLf.BHs.iK3bSNzPSMvDiMyfCMwHCM3n.Hf.RLf.BHwDCHf.BHx.BHfzBLtjCNxLyM3LiMyXCL4LSLz.iBf.BHw.BHfDSLf.BHfLCHf.RKv3xMyjiMyPCNwDCN2fiLvPyLJ.BHfDCHf.RLw.BHf.BMf.BHsDiKvHiMwXiLvHCNyDiL1fyLwn.Hf.RLf.BHwDCHf.BH0.BHfzBLtjSMv.iMxLSNzDCMxDSMvjiBf.BHw.BHfDSLf.BHfXCHf.RKv3BNyjCMwDyMyTSMyPiM1fCLJ.BHfDCHf.RLw.BHf.xMf.BHs.iK0fSN3TyLxHyMwLCN0DSNyn.Hf.RLf.BHwDCHf.BH3.BHfzBLtXCL3TiM1biMw.SL1fCM0biBf.BHw.BHfDSLf.BHfjCHf.RKv3hM3HiMyTyLvbyLwHCLwDyMJ.BHfDCHf.RLw.BHfDCLf.BHsDiKwbyL0fiM1.iM4bSNybCLwn.Hf.RLf.BHwDCHf.RLw.BHfzBLtjiLy.CLyfSMxLiM2PCLwDiBf.BHw.BHfDSLf.BHwHCHf.RKv3BN2DSLyLiM3TSLwDSN4jSMJ."
+                CurrentPosture="2" base64:StageRotationData="36.nkRX+x7my6K....fL+479fVJg8K..........B........3O"
+                LEDColour="-16181" PostureName1="Fist" PostureName2="Puppet Hand"
+                PostureName3="Open Hand" PostureName4="One Finger Point" PostureName5="Custom Posture 1"
+                PostureName6="Custom Posture 2" PostureName7="Custom Posture 3"
+                PostureName8="Custom Posture 4" PostureName9="Custom Posture 5"
+                PostureName10="Custom Posture 6" PostureName11="Custom Posture 7"
+                PostureName12="Custom Posture 8"/>
+      <INPUTSETS>
+        <INPUTSET Identifier="Flex">
+          <INPUT Identifier="Thumb" Type="3" Value="0"/>
+          <INPUT Identifier="IndexLower" Type="3" Value="0"/>
+          <INPUT Identifier="IndexUpper" Type="3" Value="0"/>
+          <INPUT Identifier="MiddleLower" Type="3" Value="0"/>
+          <INPUT Identifier="MiddleUpper" Type="3" Value="0"/>
+          <INPUT Identifier="RingUpper" Type="3" Value="0"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Orientation">
+          <INPUT Identifier="Pitch" Type="3" Value="0"/>
+          <INPUT Identifier="Roll" Type="3" Value="0"/>
+          <INPUT Identifier="Yaw" Type="3" Value="0"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Posture">
+          <INPUT Identifier="Posture1" Type="2" Value="0"/>
+          <INPUT Identifier="Posture2" Type="2" Value="0"/>
+          <INPUT Identifier="Posture3" Type="2" Value="0"/>
+          <INPUT Identifier="Posture4" Type="2" Value="0"/>
+          <INPUT Identifier="Posture5" Type="2" Value="0"/>
+          <INPUT Identifier="Posture6" Type="2" Value="0"/>
+          <INPUT Identifier="Posture7" Type="2" Value="0"/>
+          <INPUT Identifier="Posture8" Type="2" Value="0"/>
+          <INPUT Identifier="Posture9" Type="2" Value="0"/>
+          <INPUT Identifier="Posture10" Type="2" Value="0"/>
+          <INPUT Identifier="Posture11" Type="2" Value="0"/>
+          <INPUT Identifier="Posture12" Type="2" Value="0"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Direction">
+          <INPUT Identifier="Forwards" Type="2" Value="0"/>
+          <INPUT Identifier="Backwards" Type="2" Value="0"/>
+          <INPUT Identifier="Left" Type="2" Value="0"/>
+          <INPUT Identifier="Right" Type="2" Value="0"/>
+          <INPUT Identifier="Up" Type="2" Value="0"/>
+          <INPUT Identifier="Down" Type="2" Value="0"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Drum">
+          <INPUT Identifier="DrumValue" Type="1" Value="0"/>
+        </INPUTSET>
+        <INPUTSET Identifier="GyroPeak">
+          <INPUT Identifier="GyroPeakX" Type="1" Value="0"/>
+          <INPUT Identifier="GyroPeakY" Type="1" Value="0"/>
+          <INPUT Identifier="GyroPeakZ" Type="1" Value="0"/>
+        </INPUTSET>
+      </INPUTSETS>
+      <OUTPUTSETS>
+        <OUTPUT Identifier="SetNorth" Name="Set North" Value=""/>
+        <OUTPUT Identifier="LEDColour" Name="LED Colour" Value="-65536"/>
+        <OUTPUT Identifier="MotorPulse" Name="Motor Pulse" Value="0"/>
+      </OUTPUTSETS>
+    </DEVICE>
+  </DEVICEMANGER>
+  <INSPECTOR/>
+  <CLIPBOARD/>
+</GLOVERMODEL>
