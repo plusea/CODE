@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GLOVERMODEL version="0.1.9" GlobalMute="0">
+  <SIDEBAR CurrentSelectedTab="0"/>
+  <ARRANGEMENTLIST CurrentArrangement="0">
+    <ARRANGEMENT NumScenes="0" Name="New Arrangement" CurrentScene="-1" SoloCount="0"
+                 AssociatedProjectFileList=""/>
+  </ARRANGEMENTLIST>
+  <DEVICEMANGER NumDevices="1" CurrentDevice="0" DeviceName="x-OSC Hannah's Gloves">
+    <DEVICE DeviceType="0" DeviceId="XoscGlove" DeviceName="x-OSC Hannah's Gloves">
+      <SETTINGS IpAddress="255.255.255.255" ListenPort="8111" SendPort="9111"
+                Hand="0" base64:CalibrationData="96.+S9G9bi4F4CyFlkO+V9M93zwo2yak2hO.W.t8.rAX2icL6vOIdR79nYUy7CEEJxOQUhp9nFUM7iqFWkOdT8H+.qUe.Dw8bFPe7w..AIkL.zUsJIPj31I.4diFDzI689O"
+                base64:PostureData="0." CurrentPosture="-2" base64:StageRotationData="36.LlyD+nfaQ8C....fJ3VT+xXNS7C...................3O"
+                LEDColour="-16764366" BatteryLevel="0" PostureName1="Fist" PostureName2="Puppet Hand"
+                PostureName3="Open Hand" PostureName4="One Finger Point" PostureName5="Custom Posture 1"
+                PostureName6="Custom Posture 2" PostureName7="Custom Posture 3"
+                PostureName8="Custom Posture 4" PostureName9="Custom Posture 5"
+                PostureName10="Custom Posture 6" PostureName11="Custom Posture 7"
+                PostureName12="Custom Posture 8" CurrentDirection="3"/>
+      <INPUTSETS>
+        <INPUTSET Identifier="Flex">
+          <INPUT Identifier="Thumb" Type="3" Value="0.668085"/>
+          <INPUT Identifier="IndexLower" Type="3" Value="0.663726"/>
+          <INPUT Identifier="IndexUpper" Type="3" Value="0.389111"/>
+          <INPUT Identifier="MiddleLower" Type="3" Value="0.581657"/>
+          <INPUT Identifier="MiddleUpper" Type="3" Value="1"/>
+          <INPUT Identifier="RingLower" Type="3" Value="0.7051"/>
+          <INPUT Identifier="RingUpper" Type="3" Value="1"/>
+          <INPUT Identifier="Little" Type="3" Value="0.502513"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Orientation">
+          <INPUT Identifier="Pitch" Type="3" Value="0.431621"/>
+          <INPUT Identifier="Roll" Type="3" Value="0.453004"/>
+          <INPUT Identifier="Yaw" Type="3" Value="0.825485"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Posture">
+          <INPUT Identifier="Posture1" Type="2" Value="0"/>
+          <INPUT Identifier="Posture2" Type="2" Value="0"/>
+          <INPUT Identifier="Posture3" Type="2" Value="0"/>
+          <INPUT Identifier="Posture4" Type="2" Value="0"/>
+          <INPUT Identifier="Posture5" Type="2" Value="0"/>
+          <INPUT Identifier="Posture6" Type="2" Value="0"/>
+          <INPUT Identifier="Posture7" Type="2" Value="0"/>
+          <INPUT Identifier="Posture8" Type="2" Value="0"/>
+          <INPUT Identifier="Posture9" Type="2" Value="0"/>
+          <INPUT Identifier="Posture10" Type="2" Value="0"/>
+          <INPUT Identifier="Posture11" Type="2" Value="0"/>
+          <INPUT Identifier="Posture12" Type="2" Value="0"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Direction">
+          <INPUT Identifier="Forwards" Type="2" Value="3"/>
+          <INPUT Identifier="Backwards" Type="2" Value="0"/>
+          <INPUT Identifier="Left" Type="2" Value="0"/>
+          <INPUT Identifier="Right" Type="2" Value="0"/>
+          <INPUT Identifier="Up" Type="2" Value="0"/>
+          <INPUT Identifier="Down" Type="2" Value="0"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Drum">
+          <INPUT Identifier="DrumValue" Type="1" Value="0.460979"/>
+        </INPUTSET>
+        <INPUTSET Identifier="GyroPeak">
+          <INPUT Identifier="GyroPeakX" Type="1" Value="0"/>
+          <INPUT Identifier="GyroPeakY" Type="1" Value="0"/>
+          <INPUT Identifier="GyroPeakZ" Type="1" Value="0"/>
+        </INPUTSET>
+        <INPUTSET Identifier="Button">
+          <INPUT Identifier="RingButton" Type="2" Value="0"/>
+        </INPUTSET>
+      </INPUTSETS>
+      <OUTPUTSETS>
+        <OUTPUT Identifier="SetNorth" Name="Set North" Value=""/>
+        <OUTPUT Identifier="LEDColour" Name="LED Colour" Value="0"/>
+        <OUTPUT Identifier="MotorPulse" Name="Motor Pulse" Value="0"/>
+      </OUTPUTSETS>
+    </DEVICE>
+  </DEVICEMANGER>
+  <INSPECTOR/>
+  <CLIPBOARD/>
+</GLOVERMODEL>
