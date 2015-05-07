@@ -73,6 +73,7 @@ void displayAlphabet(int myNumber, int myTime){
     }
     break;
 
+
     // I
   case 9:
     for (int i=0;i<myTime;i++) {
@@ -109,6 +110,7 @@ void displayAlphabet(int myNumber, int myTime){
     }
     break;
 
+
     // M
   case 13:
     for (int i=0;i<myTime;i++) {
@@ -117,6 +119,7 @@ void displayAlphabet(int myNumber, int myTime){
       }
     }
     break;
+
 
     // N
   case 14:
@@ -127,6 +130,7 @@ void displayAlphabet(int myNumber, int myTime){
     }
     break;
 
+
     // O
   case 15:
     for (int i=0;i<myTime;i++) {
@@ -135,6 +139,7 @@ void displayAlphabet(int myNumber, int myTime){
       }
     }
     break;
+
 
     // P
   case 16:
@@ -153,6 +158,7 @@ void displayAlphabet(int myNumber, int myTime){
       }
     }
     break;
+
 
     // R
   case 18:
@@ -208,6 +214,7 @@ void displayAlphabet(int myNumber, int myTime){
     }
     break;
 
+
     // X
   case 24:
     for (int i=0;i<myTime;i++) {
@@ -216,7 +223,8 @@ void displayAlphabet(int myNumber, int myTime){
       }
     }
     break;
-    
+
+
     // Y
   case 25:
     for (int i=0;i<myTime;i++) {
@@ -225,7 +233,10 @@ void displayAlphabet(int myNumber, int myTime){
       }
     }
     break;
-    
+
+
+
+
     // Z
   case 26:
     for (int i=0;i<myTime;i++) {
@@ -237,6 +248,7 @@ void displayAlphabet(int myNumber, int myTime){
 
   }
 }
+
 
 
 

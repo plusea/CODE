@@ -84,11 +84,20 @@ int W_segments[]={
 int X_segments[]={
   4,8,10,2,13};
 int Y_segments[]={
+<<<<<<< HEAD
+3,8,2,11};
+int Z_segments[]={
+4,12,2,13,15};
+
+
+int pause = 1;
+=======
   3,8,2,11};
 int Z_segments[]={
   4,12,2,13,15};
 
 int pause = 1;  // pause very very briefly after displaying each segment
+>>>>>>> d66945ce18a21ba51ebd72d226cb912246dfe248
 int numberOfPins = 5;
 
 
@@ -104,12 +113,29 @@ void loop(){
   // TESTS:
   //testAll20LEDs();
   //testAll14LEDs();
+<<<<<<< HEAD
+=======
   // displaySegment(13);
+>>>>>>> d66945ce18a21ba51ebd72d226cb912246dfe248
 
   // Display A, B, C....:
   for (int i=1;i<=26;i++) {
     displayAlphabet(i, 200);
   }
+<<<<<<< HEAD
+
+  // displaySegment(13);
+
+  //  translateAlphabet('A');
+  //  delay(1000);
+  //    translateAlphabet('B');
+  //  delay(1000);
+
+  //    for (int i=0;i<100;i++) {
+  //  displayAlphabet(4);
+  //    }
+=======
+>>>>>>> d66945ce18a21ba51ebd72d226cb912246dfe248
 }
 
 
@@ -117,7 +143,7 @@ void loop(){
 void testAll14LEDs(){
   for (int i=0;i<14;i++) {
     displaySegment(used14Segments[i]);
-    delay(500);
+    delay(100);
   }
 }
 
@@ -125,6 +151,70 @@ void testAll14LEDs(){
 void testAll20LEDs(){
   for (int i=1;i<=20;i++) {
     displaySegment(i);
+    delay(3000);
+  }
+}
+
+
+<<<<<<< HEAD
+
+
+
+
+void translateAlphabet(char myABC){
+  if(myABC == 'A') displayAlphabet(1, 1000);
+  if(myABC == 'B') displayAlphabet(2, 1000);
+  if(myABC == 'C') displayAlphabet(3, 1000);
+  if(myABC == 'D') displayAlphabet(4, 1000);
+  if(myABC == 'E') displayAlphabet(5, 1000);
+
+}
+
+
+
+
+
+void spwm(int freq,int spin,int sp){
+  //on
+  digitalWrite(spin,HIGH);
+  delayMicroseconds(sp*freq);
+
+  // off
+  digitalWrite(spin,LOW);
+  delayMicroseconds(sp*(255-freq));
+} //spwm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+void testAll20LEDs(){
+  for (int i=1;i<=20;i++) {
+    displaySegment(i);
     delay(500);
   }
 }
+>>>>>>> d66945ce18a21ba51ebd72d226cb912246dfe248

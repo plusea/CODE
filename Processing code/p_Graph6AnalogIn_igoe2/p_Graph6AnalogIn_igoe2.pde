@@ -26,12 +26,12 @@ PFont myFont;                     // font for writing text to the window
 void setup () {
   // set up the window to whatever size you want:
   size(800, 600);        
-  //println(Serial.list());
-  printArray(Serial.list());
+  println(Serial.list());
+  //printArray(Serial.list());
   // I know that the first port in the serial list on my mac
   // is always my  Arduino or Wiring module, so I open Serial.list()[0].
   // Open whatever port is the one you're using.
-  String portName = Serial.list()[9];
+  String portName = Serial.list()[0];
   myPort = new Serial(this, portName, 9600);
   myPort.clear();
   // don't generate a serialEvent() until you get a newline (\n) byte:
