@@ -1,0 +1,99 @@
+#######################################
+# Syntax Coloring Map For Test
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PixelgroupBase.h	KEYWORD1
+PixelgroupEaser.h	KEYWORD1
+PixelgroupStrobe.h	KEYWORD1
+Pixelgroup.h	KEYWORD1
+
+PixelgroupBase	KEYWORD1
+PixelgroupEaser KEYWORD1
+PixelgroupStrobe KEYWORD1
+Pixelgroup	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+#general
+update	KEYWORD2
+paint	KEYWORD2
+
+#easer
+setEasingFunc	KEYWORD2
+getEasingFunc	KEYWORD2
+setEasingType	KEYWORD2
+getEasingType	KEYWORD2
+setDuration	KEYWORD2
+getDuration	KEYWORD2
+setLoop	KEYWORD2
+getLoop	KEYWORD2
+rewind	KEYWORD2
+
+#coloreaser
+setFrom	KEYWORD2
+getFrom	KEYWORD2
+setTo	KEYWORD2
+getTo	KEYWORD2
+
+#strobe
+setOnTime	KEYWORD2
+setOnTimeSec	KEYWORD2
+getOnTime	KEYWORD2
+setOffTime	KEYWORD2
+setOffTimeSec	KEYWORD2
+getOffTime	KEYWORD2
+setStrobeState	KEYWORD2
+getStrobeState	KEYWORD2
+
+#pixelgroup base
+setPixels	KEYWORD2
+addPixel	KEYWORD2
+removePixel	KEYWORD2
+clear	KEYWORD2
+getPixels	KEYWORD2
+getSize	KEYWORD2
+getPixelIndex	KEYWORD2
+setRGB	KEYWORD2
+getColor	KEYWORD2
+getR	KEYWORD2
+getG	KEYWORD2
+getB	KEYWORD2
+isDirty	KEYWORD2
+setDirty	KEYWORD2
+
+#easing
+setEasing	KEYWORD2
+isEasing	KEYWORD2
+
+#strobing
+setStrobing	KEYWORD2
+
+#pixelgroup
+setFlicker	KEYWORD2
+isFlicker	KEYWORD2
+
+#pixelwriter
+setPixelColor	KEYWORD2
+setPixelColor	KEYWORD2
+setShowFunc	KEYWORD2
+isShowFunc	KEYWORD2
+show	KEYWORD2
+
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+PXW_RGB KEYWORD2
+PXW_GRB KEYWORD2
+PXW_BRG KEYWORD2
