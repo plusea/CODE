@@ -3,7 +3,7 @@
 
 
 // adafuit strip
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(20, 6, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(28, 6, NEO_GRB + NEO_KHZ800);
 
 //------------------------
 // setup a pixelwriter
@@ -63,11 +63,11 @@ void setup()
   
   //------------------------
   // setup fading of group thegroup
-  group1.setFrom(255, 0, 0);
-  group1.setTo(0, 0, 255);
-  group1.setLoop(EASING_LOOP_BOUNCE);
-  group1.setDuration(3000);
-  group1.setEasing(true);
+//  group1.setFrom(255, 0, 0);
+//  group1.setTo(0, 0, 255);
+//  group1.setLoop(EASING_LOOP_BOUNCE);
+//  group1.setDuration(3000);
+//  group1.setEasing(true);
 
 
   //------------------------
