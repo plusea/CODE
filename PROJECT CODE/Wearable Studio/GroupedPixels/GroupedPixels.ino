@@ -58,16 +58,16 @@ void setup()
   group1.setRGB(255, 0, 0);
   group2.setRGB(0, 255, 0);
   group3.setRGB(0, 0, 255);
-  group4.setRGB(255, 0, 0);
+  group4.setRGB(200, 255, 0);
   writeGroups();
   
   //------------------------
   // setup fading of group thegroup
-//  group1.setFrom(255, 0, 0);
-//  group1.setTo(0, 0, 255);
-//  group1.setLoop(EASING_LOOP_BOUNCE);
-//  group1.setDuration(3000);
-//  group1.setEasing(true);
+  group1.setFrom(255, 0, 0);
+  group1.setTo(0, 0, 255);
+  group1.setLoop(EASING_LOOP_BOUNCE);
+  group1.setDuration(3000);
+  group1.setEasing(true);
 
 
   //------------------------
@@ -94,7 +94,7 @@ void loop()
   unsigned long _now = millis();
   
   // tick this group with timestamp
-//  group1.update(_now);
+  group1.update(_now);
 //  group2.update(_now);
 //  group3.update(_now);
 //  group4.update(_now);
