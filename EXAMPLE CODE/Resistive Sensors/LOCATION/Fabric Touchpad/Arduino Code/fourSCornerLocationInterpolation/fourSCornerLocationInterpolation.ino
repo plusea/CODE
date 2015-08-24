@@ -4,10 +4,10 @@
  detecting location of ANALOG INPUT contact as position of voltage divider
  */
 
-#define side1 3
-#define side2 4
-#define side3 5
-#define side4 6
+#define side1 2
+#define side2 3
+#define side3 4
+#define side4 5
 #define contact A0
 
 void setup() {

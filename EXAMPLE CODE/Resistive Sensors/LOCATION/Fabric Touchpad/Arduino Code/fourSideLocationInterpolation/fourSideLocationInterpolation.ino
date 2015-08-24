@@ -5,10 +5,10 @@
  >> http://howtogetwhatyouwant.at/
  */
 
-#define side1 3  // yellow
-#define side2 4  // orange
-#define side3 5  // green
-#define side4 6  // blue
+#define side1 2  // yellow
+#define side2 3  // orange
+#define side3 4  // green
+#define side4 5  // blue
 #define contact A0
 
 void setup() {
